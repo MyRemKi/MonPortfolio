@@ -1,0 +1,23 @@
+
+@import './base.css';
+
+
+
+@media (hover: hover) {
+}
+
+@media (min-width: 1024px) {
+}
+
+@tailwind utilities;
+
+html {
+  font-size: 90%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #020617;
+  overflow-x: hidden;
+}
