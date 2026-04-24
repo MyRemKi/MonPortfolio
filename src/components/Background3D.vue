@@ -28,8 +28,8 @@ const createCircleTexture = () => {
   const ctx = canvas.getContext('2d');
 
   const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
-  gradient.addColorStop(0, 'rgba(255,255,255,1)');
-  gradient.addColorStop(0.2, 'rgba(34,211,238,0.8)');
+  gradient.addColorStop(0, 'rgba(0,255,255,1)');
+  gradient.addColorStop(0.2, 'rgba(34,0,238,0.8)');
   gradient.addColorStop(0.5, 'rgba(59,130,246,0.2)');
   gradient.addColorStop(1, 'rgba(0,0,0,0)');
 
@@ -41,7 +41,7 @@ const createCircleTexture = () => {
 
 onMounted(() => {
   scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x020617, 0.08);
+  scene.fog = new THREE.FogExp2(0x0FF617, 0.08);
 
   camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
   camera.position.z = 10;
@@ -106,7 +106,7 @@ onMounted(() => {
     size: 0.15,
     map: texture,
     transparent: true,
-    color: 0x22d3ee,
+    color: 0x22d300,
     blending: THREE.AdditiveBlending
   });
 
