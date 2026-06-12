@@ -1,15 +1,25 @@
 <template>
   <main class="experiences-page">
 
+    <!-- HERO -->
     <section class="hero">
+      <div class="hero-bg hero-bg-left"></div>
+      <div class="hero-bg hero-bg-right"></div>
+
       <div class="hero-content">
         <span class="hero-subtitle">Mon parcours pro</span>
+
         <h1 class="hero-title">
           Expériences <span>Professionnelles</span>
         </h1>
+
+        <p class="hero-text">
+          Découvrez mon parcours en entreprise et mes expériences dans le développement et la data.
+        </p>
       </div>
     </section>
 
+    <!-- TIMELINE -->
     <section class="timeline-section">
       <div class="timeline">
 
@@ -24,20 +34,33 @@
           <div class="experience-card">
 
             <div class="card-date">
-              {{ exp.start }} → {{ exp.end }}
+              {{ exp.start }} • {{ exp.end }}
             </div>
 
             <h2 class="card-title">{{ exp.job }}</h2>
 
-            <p class="card-company">{{ exp.company }}</p>
-
-            <p class="card-contract">{{ exp.contract }}</p>
+            <p class="card-subtitle">
+              {{ exp.company }}
+            </p>
 
             <p class="card-description">
               {{ exp.short }}
             </p>
 
+            <router-link
+              :to="`/experience/${exp.id}`"
+              class="card-footer"
+              @click.stop
+            >
+              <span>Voir l’expérience</span>
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 12H19" stroke="currentColor" stroke-width="2"/>
+                <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="2"/>
+              </svg>
+            </router-link>
+
           </div>
+
         </div>
 
       </div>
@@ -58,56 +81,110 @@ const goTo = (id) => {
 </script>
 
 <style scoped>
-/* ===== GLOBAL ===== */
+
+/* =========================
+   GLOBAL (SYSTÈME FORMATIONS)
+========================= */
 .experiences-page {
   min-height: 100vh;
-  background: linear-gradient(to bottom, #111827, #0b1220);
-  color: #e5e7eb;
-  font-family: system-ui, -apple-system, sans-serif;
+  background: linear-gradient(135deg, #e5e7eb, #f1f5f9);
+  padding-bottom: 5rem;
+  color: #1a1a1a;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
-/* ===== HERO ===== */
+/* =========================
+   HERO IDENTIQUE
+========================= */
 .hero {
-  padding: 6rem 2rem 3rem;
+  position: relative;
+  padding: 8rem 2rem 5rem;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.hero-content {
+  max-width: 900px;
   text-align: center;
+  z-index: 2;
 }
 
 .hero-subtitle {
   display: inline-block;
-  padding: 0.4rem 0.9rem;
+  padding: 0.5rem 1rem;
   border-radius: 999px;
-  background: rgba(59,130,246,0.1);
-  color: #93c5fd;
-  font-size: 0.8rem;
-  font-weight: 600;
+  background: white;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e5e7eb;
 }
 
 .hero-title {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -1px;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
 }
 
 .hero-title span {
-  color: #3b82f6;
+  background: linear-gradient(to right, #FFA233, #FFE433);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* ===== TIMELINE ===== */
-.timeline-section {
-  max-width: 900px;
+.hero-text {
+  max-width: 620px;
   margin: 0 auto;
-  padding: 0 2rem 4rem;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* =========================
+   BLOBS IDENTIQUES
+========================= */
+.hero-bg {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(120px);
+  opacity: 0.35;
+}
+
+.hero-bg-left {
+  width: 300px;
+  height: 300px;
+  background: rgba(59, 130, 246, 0.15);
+  left: 10%;
+  top: 15%;
+}
+
+.hero-bg-right {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 162, 51, 0.15);
+  right: 10%;
+  top: 10%;
+}
+
+/* =========================
+   TIMELINE IDENTIQUE
+========================= */
+.timeline-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
 .timeline {
+  margin-top: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
   margin-left: 1rem;
 }
 
@@ -116,92 +193,109 @@ const goTo = (id) => {
   position: absolute;
   left: 10px;
   top: 0;
-  width: 2px;
+  width: 3px;
   height: 100%;
-  background: rgba(255,255,255,0.15);
+  border-radius: 999px;
+  background: #e5e7eb;
 }
 
-/* ===== ITEM ===== */
 .timeline-item {
   position: relative;
   padding-left: 3rem;
   cursor: pointer;
 }
 
-/* DOT */
 .timeline-dot {
   position: absolute;
-  left: 0;
-  top: 1.8rem;
-  width: 18px;
-  height: 18px;
+  left: 12px;
+  top: 2.3rem;
+  width: 26px;
+  height: 26px;
+  transform: translateX(-50%);
   border-radius: 50%;
-  background: #3b82f6;
-  border: 3px solid #111827;
-  box-shadow: 0 0 0 4px rgba(59,130,246,0.15);
+  background: white;
+  border: 4px solid #FFA233;
+  box-shadow: 0 0 12px rgba(255, 162, 51, 0.4);
+  transition: transform 0.3s ease;
 }
 
-/* ===== CARD ===== */
+.timeline-item:hover .timeline-dot {
+  transform: translateX(-50%) scale(1.2);
+}
+
+/* =========================
+   CARD IDENTIQUE FORMATIONS
+========================= */
 .experience-card {
-  background: #1f2937;
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  padding: 1.6rem;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-  transition: all 0.2s ease;
+  padding: 2rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
 }
 
-/* HOVER */
 .timeline-item:hover .experience-card {
-  transform: translateY(-4px);
-  border-color: #3b82f6;
-  box-shadow: 0 12px 30px rgba(59,130,246,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
 
-/* ===== TEXT ===== */
+/* TEXT */
 .card-date {
-  display: inline-block;
-  padding: 0.3rem 0.7rem;
+  display: inline-flex;
+  padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  color: #9ca3af;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 0.8rem;
   font-weight: 600;
-  font-size: 0.75rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .card-title {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: #f3f4f6;
+  font-size: 1.8rem;
+  font-weight: 800;
 }
 
-.card-company {
-  color: #3b82f6;
+.card-subtitle {
+  color: #555;
   font-weight: 600;
-  margin-top: 0.4rem;
-}
-
-.card-contract {
-  color: #9ca3af;
-  font-size: 0.9rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1rem;
 }
 
 .card-description {
-  color: #d1d5db;
-  font-size: 0.95rem;
-  line-height: 1.6;
+  color: #666;
+  line-height: 1.7;
 }
 
-/* ===== MOBILE ===== */
+/* FOOTER */
+.card-footer {
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #f59e0b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.card-footer svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.timeline-item:hover .card-footer svg {
+  transform: translateX(6px);
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .timeline-item {
-    padding-left: 2.2rem;
-  }
-
-  .experience-card {
-    padding: 1.3rem;
-  }
+  .hero { padding-top: 6rem; }
+  .timeline-item { padding-left: 2.5rem; }
+  .experience-card { padding: 1.5rem; }
+  .card-title { font-size: 1.4rem; }
 }
+
 </style>

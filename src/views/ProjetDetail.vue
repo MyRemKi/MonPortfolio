@@ -1,188 +1,418 @@
 <template>
-  <main class="detail-page">
+  <main v-if="projet" class="page">
 
+    <!-- HERO -->
     <section class="hero">
-      <span class="hero-id">Projet #{{ projet.id }}</span>
-      <h1 class="hero-title">{{ projet.name }}</h1>
-      <p class="hero-subtitle">Architecture & Système</p>
+
+      <div class="hero-overlay"></div>
+
+      <!-- IMAGE SAFE (IMPORTANT FIX) -->
+      <div
+        class="hero-bg"
+        :style="heroStyle"
+      ></div>
+
+      <div class="hero-content">
+
+        <span class="badge">{{ projet.status }}</span>
+
+        <h1>{{ projet.name }}</h1>
+
+        <!-- GLASS SUBTITLE -->
+        <p class="subtitle glass">{{ projet.subtitle }}</p>
+
+        <!-- GLASS META -->
+        <div class="meta glass">
+          <span>{{ projet.year }}</span>
+          <span>•</span>
+          <span>{{ projet.role }}</span>
+        </div>
+        
+      </div>
+
     </section>
 
-    <section class="content">
+    <!-- INTRO -->
+     <!-- LINKS -->
+     <div class="link">
+    <section class="links">
+  
+  <button class="back-btn" @click="$router.back()">
+    ← Retour
+  </button>
 
-      <div class="grid">
+  <a :href="projet.github" target="_blank">GitHub</a>
 
-        <div class="card main">
-          <h2>Description</h2>
-          <p>{{ projet.desc }}</p>
+</section>
+    </div>
+    <section class="intro">
+      <p>{{ projet.desc }}</p>
+      
+    </section>
+
+    <!-- GRID -->
+    <section class="grid">
+
+      <div class="card big">
+        <h2>Le projet</h2>
+        <p>{{ projet.description }}</p>
+      </div>
+
+      <div class="card">
+        <h2>Objectif</h2>
+        <p>{{ projet.objective }}</p>
+      </div>
+
+      <div class="card">
+        <h2>Progression</h2>
+
+        <div class="bar">
+          <div class="fill" :style="{ width: projet.progress + '%' }"></div>
         </div>
 
-        <div class="card side">
-          <h3>Technologies</h3>
-          <ul>
-            <li v-for="tech in projet.tech" :key="tech">
-              {{ tech }}
-            </li>
-          </ul>
-        </div>
+        <span class="percent">{{ projet.progress }}%</span>
+      </div>
 
-        <div class="card full">
-          <h2>Objectif du projet</h2>
-          <p>{{ projet.objective }}</p>
-        </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="stack">
+
+      <h2>Technologies utilisées</h2>
+
+      <div class="chips">
+
+        <span v-for="l in projet.languages || []" :key="l" class="chip lang">
+          {{ l }}
+        </span>
+
+        <span v-for="l in projet.libraries || []" :key="l" class="chip lib">
+          {{ l }}
+        </span>
+
+        <span v-for="t in projet.tools || []" :key="t" class="chip tool">
+          {{ t }}
+        </span>
 
       </div>
 
-      <div class="back">
-        <button @click="$router.back()">← Retour</button>
-      </div>
+    </section>
 
+    <!-- FEATURES -->
+    <section class="section">
+      <h2>Fonctionnalités</h2>
+      <ul>
+        <li v-for="f in projet.features || []" :key="f">{{ f }}</li>
+      </ul>
+    </section>
+
+    <!-- CHALLENGES -->
+    <section class="section alt">
+      <h2>Challenges</h2>
+      <ul>
+        <li v-for="c in projet.challenges || []" :key="c">{{ c }}</li>
+      </ul>
+    </section>
+
+    <!-- STORY -->
+    <section class="story">
+      <h2>Retour d’expérience</h2>
+      <p>{{ projet.feeling }}</p>
     </section>
 
   </main>
+
+  <div v-else class="error">
+    Projet introuvable
+  </div>
 </template>
 
 <script setup>
-import { useRoute } from 'vue-router'
+import { useRoute } from "vue-router"
+import { computed } from "vue"
+import { projets } from "@/data/projets"
 
 const route = useRoute()
-const id = parseInt(route.params.id)
 
-const projets = [
-  {
-    id: 1,
-    name: "Neural Vision 3D",
-    desc: "Analyse de flux data en temps réel avec rendu volumétrique.",
-    tech: ["Vue.js", "Three.js", "WebGL"],
-    objective: "Créer une visualisation avancée de données en 3D en temps réel."
-  },
-  {
-    id: 2,
-    name: "Cloud Core Architecture",
-    desc: "Infrastructure distribuée auto-scalable pour Big Data.",
-    tech: ["Docker", "Kubernetes", "AWS"],
-    objective: "Déployer une architecture scalable et résiliente."
-  },
-  {
-    id: 3,
-    name: "Cyber Armor",
-    desc: "Système de détection d'anomalies basé sur l'IA.",
-    tech: ["Python", "TensorFlow", "FastAPI"],
-    objective: "Détecter les menaces en temps réel avec IA."
+const projet = computed(() =>
+  projets.find(p => p.id === Number(route.params.id))
+)
+
+/* ======================
+   FIX IMAGE SAFE
+====================== */
+const heroStyle = computed(() => {
+  const img =
+    projet.value.image 
+    "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
+
+  return {
+    backgroundImage: `url(${img})`
   }
-]
-
-const projet = projets.find(p => p.id === id)
+})
 </script>
 
 <style scoped>
-.detail-page {
-  min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #1e1b4b, #312e81);
-  color: white;
+.glass {
+  opacity: 0.8;
 }
-
-.hero {
-  text-align: center;
-  padding: 6rem 2rem 4rem;
+.meta{
+  opacity: 0.7;
 }
-
-.hero-id {
-  color: #a78bfa;
-  font-weight: 600;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 900;
-  margin: 1rem 0;
-}
-
-.hero-subtitle {
-  color: #f472b6;
-  font-weight: 600;
-}
-
-.content {
-  max-width: 1100px;
-  margin: auto;
-  padding: 2rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  padding: 2rem;
-  border-radius: 20px;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.1);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.main {
-  grid-column: 1;
-}
-
-.side {
-  grid-column: 2;
-}
-
-.full {
-  grid-column: 1 / -1;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #c4b5fd;
-}
-
-h3 {
-  margin-bottom: 1rem;
-  color: #f472b6;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 0.5rem;
-  color: #e0e7ff;
-}
-
-.back {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.back button {
+/* ================= FULL PAGE BACKGROUND FIX ================= */
+.back-btn {
+  margin-right: 10px;
   padding: 10px 20px;
   border-radius: 12px;
   border: none;
-  background: #a78bfa;
+  background: #111827;
   color: white;
-  font-weight: 700;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.back button:hover {
-  background: #f472b6;
+.back-btn:hover {
+  background: #374151;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #f8fafc;
+}
+/* assure que le conteneur prend toute la hauteur */
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (max-width: 768px) {
+/* ================= GLASS EFFECT ================= */
+
+/* ================= GLASS AUTO-SIZE ================= */
+.glass {
+  display: inline-flex;
+  width: fit-content;
+
+  align-items: center;
+  gap: 0.5rem;
+
+  padding: 10px 12px;
+
+  border-radius: 12px;
+
+  background-color: rgba(46, 44, 44, 0.616);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: white;
+
+  white-space: nowrap;
+}
+
+/* META GLASS */
+.glass-meta {
+  display: inline-flex;
+  width: fit-content;
+
+  align-items: center;
+  gap: 0.5rem;
+
+  margin-top: 1rem;
+  padding: 6px 12px;
+
+  border-radius: 12px;
+
+  background: rgba(46, 44, 44, 0.616);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  color: white;
+  font-weight: 500;
+
+  white-space: nowrap;
+}
+
+/* ================= PAGE ================= */
+.page {
+  font-family: system-ui;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+/* ================= HERO ================= */
+.hero {
+  position: relative;
+  height: 450px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  filter: brightness(0.7);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.629), transparent);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+
+.meta {
+  margin-top: 1rem;
+}
+
+/* BADGE */
+.badge {
+  background: #f59e0b;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  width: fit-content;
+}
+
+/* ================= INTRO ================= */
+.intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 3rem auto;
+  font-size: 1.2rem;
+}
+
+/* ================= GRID ================= */
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.big {
+  grid-column: span 1;
+}
+
+/* ================= STACK ================= */
+.stack {
+  text-align: center;
+  margin: 4rem 0;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.chip {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.lang { background: #dbeafe; color: #1d4ed8; }
+.lib { background: #dcfce7; color: #166534; }
+.tool { background: #fef3c7; color: #92400e; }
+
+/* ================= SECTIONS ================= */
+.section {
+  max-width: 800px;
+  margin: 3rem auto;
+}
+
+.section.alt {
+  background: #eef2ff;
+  padding: 2rem;
+  border-radius: 20px;
+}
+
+/* ================= STORY ================= */
+.story {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 2rem;
+  border-left: 5px solid #3b82f6;
+  background: white;
+}
+
+/* ================= PROGRESS ================= */
+.bar {
+  height: 10px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #f59e0b);
+}
+
+.percent {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* ================= LINKS ================= */
+.links {
+  text-align: center;
+  margin: 4rem;
+}
+
+.links a {
+  margin: 10px;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  text-decoration: none;
+}
+
+.links a:hover {
+  background: #f59e0b;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
   }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
 }
+
 </style>

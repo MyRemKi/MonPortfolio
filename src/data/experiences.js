@@ -1,62 +1,66 @@
 export const experiences = [
   {
     id: 1,
-    job: "Développeur Frontend",
-    company: "TechCorp",
-    contract: "Alternance",
-    start: "2023",
-    end: "2024",
-    short: "Développement d'interfaces modernes en Vue.js et optimisation UX/UI.",
-    tasks: [
-      "Développement Vue.js",
-      "Optimisation UI",
-      "Création composants"
+    job: "Technicien informatique",
+    company: "Caisse Primaire d’Assurance Maladie",
+    contract: "CDD",
+    start: "novembre 2023",
+    end: "mai 2024",
+    short: "Support IT et participation à des projets d’amélioration et de déploiement.",
+    outils: [
+      "Ticketing",
+      "Outils de déploiement",
+      "Assitance pour la gestion parc IT"
     ],
-    description: "Travail sur une application SaaS moderne avec optimisation des performances et création d’interfaces dynamiques."
+    tasks: [
+      "Support technique et gestion des incidents",
+      "Participation aux projets de déploiement",
+      "Gestion de l’inventaire IT",
+      "Maintenance du matériel informatique"
+    ],
+    description: "Intervention sur le support informatique avec contribution à des projets d’amélioration di SI et gestion du parc matériel."
   },
   {
     id: 2,
-    job: "Développeur Web",
-    company: "StartupX",
-    contract: "Stage",
-    start: "2022",
-    end: "2022",
-    short: "Création d'applications web fullstack avec API et base de données.",
-    tasks: [
-      "Développement Vue.js",
-      "Optimisation UI",
-      "Création composants"
+    job: "Technicien HelpDesk",
+    company: "HelpLine",
+    contract: "CDI",
+    start: "octobre 2024",
+    end: "aout 2025",
+    short: "Support technique utilisateurs et gestion des incidents IT en environnement professionnel.",
+    outils: [
+      "Ticketing",
+      "Active Directory",
+      "Outils ITSM",
+      "Windows"
     ],
-    description: "Travail sur une application SaaS moderne avec optimisation des performances et création d’interfaces dynamiques."
+    tasks: [
+      "Support technique utilisateurs",
+      "Gestion des incidents (ticketing)",
+      "Prise d’appels et résolution de problèmes",
+      "Gestion des accès utilisateurs",
+      "Maintenance des systèmes informatiques"
+    ],
+    description: "Gestion du support informatique au quotidien avec résolution d’incidents, assistance utilisateurs et maintien en condition opérationnelle des systèmes."
   },
   {
     id: 3,
-    job: "Technicien IT",
-    company: "CPAM",
-    contract: "CDD",
-    start: "2021",
-    end: "2021",
-    short: "Support technique, maintenance systèmes et assistance utilisateurs.",
-    tasks: [
-      "Développement Vue.js",
-      "Optimisation UI",
-      "Création composants"
+    job: "Serveur polyvalent",
+    company: "Morel et fils",
+    contract: "Contrat étudiant",
+    start: "novembre 2025",
+    end: "en poste",
+    short: "Expérience polyvalente en restauration avec gestion du service et relation client.",
+    outils: [
     ],
-    description: "Travail sur une application SaaS moderne avec optimisation des performances et création d’interfaces dynamiques."
-  },
-  {
-    id: 4,
-    job: "Immersion IT",
-    company: "IBM",
-    contract: "Stage",
-    start: "2020",
-    end: "2020",
-    short: "Découverte des environnements cloud et infrastructures IT.",
     tasks: [
-      "Développement Vue.js",
-      "Optimisation UI",
-      "Création composants"
+      "Préparation du service",
+      "Accueil des clients",
+      "Soutien aux serveurs",
+      "Organisation terrasse et bar",
+      "Gestion des plateaux"
     ],
-    description: "Travail sur une application SaaS moderne avec optimisation des performances et création d’interfaces dynamiques."
+    description: "Participation à l’organisation du service en restauration avec gestion du flux client, préparation et travail en équipe pour assurer un service fluide."
   }
+  
 ]

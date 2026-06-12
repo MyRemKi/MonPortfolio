@@ -1,5 +1,5 @@
 <template>
-  <main class="formations-page">
+  <main class="experiences-page">
 
     <!-- HERO -->
     <section class="hero">
@@ -7,14 +7,14 @@
       <div class="hero-bg hero-bg-right"></div>
 
       <div class="hero-content">
-        <span class="hero-subtitle">Mon parcours</span>
+        <span class="hero-subtitle">Mon parcours pro</span>
 
         <h1 class="hero-title">
-          Parcours <span>Académique</span>
+          Expériences <span>Professionnelles</span>
         </h1>
 
         <p class="hero-text">
-          Découvrez mes formations et mon évolution académique dans le domaine de l’informatique.
+          Découvrez mon parcours en entreprise et mes expériences dans le développement et la data.
         </p>
       </div>
     </section>
@@ -24,35 +24,35 @@
       <div class="timeline">
 
         <div
-          v-for="f in formations"
-          :key="f.id"
+          v-for="exp in experiences"
+          :key="exp.id"
           class="timeline-item"
-          @click="goTo(f.id)"
+          @click="goTo(exp.id)"
         >
           <div class="timeline-dot"></div>
 
-          <div class="formation-card">
+          <div class="experience-card">
 
             <div class="card-date">
-              {{ f.date }}
+              {{ exp.start }} • {{ exp.end }}
             </div>
 
-            <h2 class="card-title">{{ f.title }}</h2>
+            <h2 class="card-title">{{ exp.job }}</h2>
 
             <p class="card-subtitle">
-              {{ f.school }}
+              {{ exp.company }}
             </p>
 
             <p class="card-description">
-              {{ f.details }}
+              {{ exp.short }}
             </p>
 
             <router-link
-              :to="`/formation/${f.id}`"
+              :to="`/experience/${exp.id}`"
               class="card-footer"
               @click.stop
             >
-              <span>Voir la formation</span>
+              <span>Voir l’expérience</span>
               <svg viewBox="0 0 24 24" fill="none">
                 <path d="M5 12H19" stroke="currentColor" stroke-width="2"/>
                 <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="2"/>
@@ -71,37 +71,37 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { formations } from '@/data/formations'
+import { experiences } from '@/data/experiences'
 
 const router = useRouter()
 
 const goTo = (id) => {
-  router.push(`/formation/${id}`)
+  router.push(`/experience/${id}`)
 }
 </script>
 
 <style scoped>
 
 /* =========================
-   GLOBAL (HOME STYLE BASE)
+   GLOBAL (SYSTÈME FORMATIONS)
 ========================= */
-.formations-page {
+.experiences-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #e5e7eb, #f1f5f9);
   padding-bottom: 5rem;
-  color: #1a1a1a;
+  color: #ffffff;
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
 /* =========================
-   HERO
+   HERO IDENTIQUE
 ========================= */
 .hero {
   position: relative;
   padding: 8rem 2rem 5rem;
   display: flex;
   justify-content: center;
-  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  background: #ffffff13;
+  border-radius: 0px 0px 20px 20px;
 }
 
 .hero-content {
@@ -145,7 +145,7 @@ const goTo = (id) => {
 }
 
 /* =========================
-   BLOBS (BLEU CIEL + ORANGE)
+   BLOBS IDENTIQUES
 ========================= */
 .hero-bg {
   position: absolute;
@@ -157,7 +157,7 @@ const goTo = (id) => {
 .hero-bg-left {
   width: 300px;
   height: 300px;
-  background: rgba(59, 130, 246, 0.15); /* bleu ciel */
+  background: rgba(59, 130, 246, 0.15);
   left: 10%;
   top: 15%;
 }
@@ -165,13 +165,13 @@ const goTo = (id) => {
 .hero-bg-right {
   width: 300px;
   height: 300px;
-  background: rgba(255, 162, 51, 0.15); /* orange */
+  background: rgba(255, 162, 51, 0.15);
   right: 10%;
   top: 10%;
 }
 
 /* =========================
-   TIMELINE
+   TIMELINE IDENTIQUE
 ========================= */
 .timeline-section {
   max-width: 1100px;
@@ -180,7 +180,7 @@ const goTo = (id) => {
 }
 
 .timeline {
-  margin-top : 10px;
+  margin-top: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -199,14 +199,12 @@ const goTo = (id) => {
   background: #e5e7eb;
 }
 
-/* ITEM */
 .timeline-item {
   position: relative;
   padding-left: 3rem;
   cursor: pointer;
 }
 
-/* DOT */
 .timeline-dot {
   position: absolute;
   left: 12px;
@@ -226,19 +224,19 @@ const goTo = (id) => {
 }
 
 /* =========================
-   CARD
+   CARD IDENTIQUE FORMATIONS
 ========================= */
-.formation-card {
+.experience-card {
   padding: 2rem;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.152);
   backdrop-filter: blur(12px);
   border: 1px solid #e5e7eb;
   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
 }
 
-.timeline-item:hover .formation-card {
+.timeline-item:hover .experience-card {
   transform: translateY(-6px);
   box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
@@ -271,9 +269,7 @@ const goTo = (id) => {
   line-height: 1.7;
 }
 
-/* =========================
-   FOOTER LINK
-========================= */
+/* FOOTER */
 .card-footer {
   margin-top: 1.5rem;
   display: inline-flex;
@@ -294,26 +290,12 @@ const goTo = (id) => {
   transform: translateX(6px);
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* MOBILE */
 @media (max-width: 768px) {
-
-  .hero {
-    padding-top: 6rem;
-  }
-
-  .timeline-item {
-    padding-left: 2.5rem;
-  }
-
-  .formation-card {
-    padding: 1.5rem;
-  }
-
-  .card-title {
-    font-size: 1.4rem;
-  }
+  .hero { padding-top: 6rem; }
+  .timeline-item { padding-left: 2.5rem; }
+  .experience-card { padding: 1.5rem; }
+  .card-title { font-size: 1.4rem; }
 }
 
 </style>

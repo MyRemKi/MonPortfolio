@@ -1,6 +1,7 @@
 <template>
   <main class="projets-page">
 
+    <!-- HERO -->
     <section class="hero">
       <div class="hero-bg hero-bg-left"></div>
       <div class="hero-bg hero-bg-right"></div>
@@ -18,6 +19,7 @@
       </div>
     </section>
 
+    <!-- TIMELINE -->
     <section class="timeline-section">
       <div class="timeline">
 
@@ -31,39 +33,51 @@
 
           <div class="project-card">
 
-            <div class="card-date">
-              {{ projet.year }} • {{ projet.status }}
-            </div>
+  <div class="card-content">
 
-            <h2 class="card-title">{{ projet.name }}</h2>
+    <!-- TEXTE (inchangé) -->
+    <div class="card-info">
 
-            <p class="card-subtitle">
-              {{ projet.subtitle }}
-            </p>
+      <div class="card-date">
+        {{ projet.year }} • {{ projet.status }}
+      </div>
 
-            <p class="card-description">
-              {{ projet.desc }}
-            </p>
+      <h2 class="card-title">{{ projet.name }}</h2>
 
-            <div class="stack">
-              <span v-for="tech in projet.stack" :key="tech" class="chip">
-                {{ tech }}
-              </span>
-            </div>
+      <p class="card-subtitle">
+        {{ projet.subtitle }}
+      </p>
 
-            <router-link
-              :to="{ name: 'projet-detail', params: { id: projet.id } }"
-              class="card-footer"
-              @click.stop
-            >
-              <span>Voir le projet</span>
-              <svg viewBox="0 0 24 24" fill="none">
-                <path d="M5 12H19" stroke="currentColor" stroke-width="2"/>
-                <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="2"/>
-              </svg>
-            </router-link>
+      <p class="card-description">
+        {{ projet.desc }}
+      </p>
 
-          </div>
+      <div class="mini-stack">
+        {{ projet.stack.join(" • ") }}
+      </div>
+
+      <router-link
+        :to="{ name: 'projet-detail', params: { id: projet.id } }"
+        class="card-footer"
+        @click.stop
+      >
+        <span>Voir le projet</span>
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M5 12H19" stroke="currentColor" stroke-width="2"/>
+          <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </router-link>
+
+    </div>
+
+    <!-- IMAGE -->
+    <div class="card-image">
+      <img :src="projet.image" alt="image projet" />
+    </div>
+
+  </div>
+
+</div>
         </div>
 
       </div>
@@ -77,27 +91,69 @@ import { useRouter } from 'vue-router'
 import { projets } from '@/data/projets'
 
 const router = useRouter()
+
 const goTo = (id) => {
   router.push(`/projet/${id}`)
 }
 </script>
 
 <style scoped>
+
+/* =========================
+   GLOBAL IDENTIQUE FORMATIONS
+========================= */
 .projets-page {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top left, rgba(59,130,246,0.12), transparent 40%),
-    radial-gradient(circle at bottom right, rgba(168,85,247,0.12), transparent 40%),
-    linear-gradient(135deg, #0b0f1a 0%, #0f172a 50%, #020617 100%);
+  background: linear-gradient(135deg, #e5e7eb, #f1f5f9);
   padding-bottom: 5rem;
-  color: #e2e8f0;
+  color: #1a1a1a;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+.card-content {
+  display: flex;
+  align-items: stretch; /* 🔥 clé */
+  gap: 2rem;
 }
 
+/* TEXTE */
+.card-info {
+  flex: 1;
+}
+
+/* IMAGE */
+.card-image {
+  width: 260px;
+  min-width: 260px;
+  height: auto; /* 🔥 important */
+  border-radius: 0 20px 20px 0; /* épouse la card */
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card-image {
+    width: 100%;
+    height: 180px;
+  }
+}
+/* HERO IDENTIQUE FORMATIONS */
 .hero {
   position: relative;
   padding: 8rem 2rem 5rem;
   display: flex;
   justify-content: center;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
 }
 
 .hero-content {
@@ -110,23 +166,24 @@ const goTo = (id) => {
   display: inline-block;
   padding: 0.5rem 1rem;
   border-radius: 999px;
-  background: rgba(59,130,246,0.15);
-  color: #60a5fa;
+  background: white;
+  color: #555;
   font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
+  border: 1px solid #e5e7eb;
 }
 
 .hero-title {
-  font-size: clamp(3rem, 7vw, 5.5rem);
+  font-size: clamp(3rem, 7vw, 5rem);
   font-weight: 900;
   line-height: 1;
 }
 
 .hero-title span {
-  background: linear-gradient(to right, #60a5fa, #22d3ee, #a855f7);
+  background: linear-gradient(to right, #FFA233, #FFE433);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -134,22 +191,23 @@ const goTo = (id) => {
 .hero-text {
   max-width: 620px;
   margin: 0 auto;
-  color: #94a3b8;
+  color: #555;
   font-size: 1.1rem;
   line-height: 1.8;
 }
 
+/* BLOBS IDENTIQUES */
 .hero-bg {
   position: absolute;
   border-radius: 999px;
-  filter: blur(100px);
-  opacity: 0.5;
+  filter: blur(120px);
+  opacity: 0.35;
 }
 
 .hero-bg-left {
   width: 300px;
   height: 300px;
-  background: rgba(59,130,246,0.25);
+  background: rgba(59, 130, 246, 0.15);
   left: 10%;
   top: 15%;
 }
@@ -157,11 +215,14 @@ const goTo = (id) => {
 .hero-bg-right {
   width: 300px;
   height: 300px;
-  background: rgba(168,85,247,0.25);
+  background: rgba(255, 162, 51, 0.15);
   right: 10%;
   top: 10%;
 }
 
+/* =========================
+   TIMELINE IDENTIQUE FORMATIONS
+========================= */
 .timeline-section {
   max-width: 1100px;
   margin: 0 auto;
@@ -169,6 +230,7 @@ const goTo = (id) => {
 }
 
 .timeline {
+  margin-top: 10px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -184,7 +246,7 @@ const goTo = (id) => {
   width: 3px;
   height: 100%;
   border-radius: 999px;
-  background: linear-gradient(to bottom, #3b82f6, #a855f7);
+  background: #e5e7eb;
 }
 
 .timeline-item {
@@ -197,13 +259,13 @@ const goTo = (id) => {
   position: absolute;
   left: 12px;
   top: 2.3rem;
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   transform: translateX(-50%);
   border-radius: 50%;
-  background: linear-gradient(135deg, #3b82f6, #a855f7);
-  border: 4px solid #0b0f1a;
-  box-shadow: 0 0 12px rgba(59,130,246,0.7), 0 0 20px rgba(168,85,247,0.5);
+  background: white;
+  border: 4px solid #FFA233;
+  box-shadow: 0 0 12px rgba(255, 162, 51, 0.4);
   transition: transform 0.3s ease;
 }
 
@@ -211,28 +273,31 @@ const goTo = (id) => {
   transform: translateX(-50%) scale(1.2);
 }
 
+/* =========================
+   CARD IDENTIQUE FORMATIONS
+========================= */
 .project-card {
   padding: 2rem;
   border-radius: 20px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
 }
 
 .timeline-item:hover .project-card {
   transform: translateY(-6px);
-  border-color: rgba(59,130,246,0.5);
-  box-shadow: 0 15px 40px rgba(59,130,246,0.25);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
 
+/* TEXT */
 .card-date {
   display: inline-flex;
   padding: 0.4rem 0.8rem;
   border-radius: 999px;
-  background: rgba(59,130,246,0.15);
-  color: #60a5fa;
+  background: #fef3c7;
+  color: #b45309;
   font-size: 0.8rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -244,38 +309,30 @@ const goTo = (id) => {
 }
 
 .card-subtitle {
-  color: #22d3ee;
+  color: #555;
   font-weight: 600;
   margin-bottom: 1rem;
 }
 
 .card-description {
-  color: #94a3b8;
+  color: #666;
   line-height: 1.7;
 }
 
-.stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/* STACK version minimaliste (alignée UX formations) */
+.mini-stack {
   margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #888;
 }
 
-.chip {
-  padding: 0.3rem 0.7rem;
-  border-radius: 999px;
-  background: rgba(168,85,247,0.15);
-  color: #c4b5fd;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-
+/* FOOTER */
 .card-footer {
   margin-top: 1.5rem;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  color: #60a5fa;
+  color: #f59e0b;
   font-weight: 600;
   text-decoration: none;
 }
@@ -290,21 +347,11 @@ const goTo = (id) => {
   transform: translateX(6px);
 }
 
+/* MOBILE */
 @media (max-width: 768px) {
-  .hero {
-    padding-top: 6rem;
-  }
-
-  .timeline-item {
-    padding-left: 2.5rem;
-  }
-
-  .project-card {
-    padding: 1.5rem;
-  }
-
-  .card-title {
-    font-size: 1.4rem;
-  }
+  .hero { padding-top: 6rem; }
+  .timeline-item { padding-left: 2.5rem; }
+  .project-card { padding: 1.5rem; }
+  .card-title { font-size: 1.4rem; }
 }
 </style>

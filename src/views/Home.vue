@@ -1,299 +1,367 @@
 <template>
   <main class="page">
-    <section class="hero">
-      <div class="logo-container">
-        <img src="/images/logo.jpg" alt="Logo" class="logo" />
-      </div>
 
-      <h1 class="title">
-        Recherche poste <span> Alternance </span> dans le domaine
-        <span>Data & IA</span>
-      </h1>
+    <div class="container">
 
-      <p class="subtitle">
-        Durée alternance : <span>1 - 2 ans</span> || Pour quand : début
-        <span>septembre 2026</span> || Mobilité : dans toute la
-        <span>France</span>
-      </p>
+      <!-- HERO -->
+      <section class="hero">
+        <img src="/images/logo.jpg" class="logo" />
 
-      <div class="actions">
-        <router-link to="/projets" class="btn primary">
-          Explorer les projets
-        </router-link>
-        <router-link to="/contact" class="btn secondary">
+        <h1>
+          Étudiant <span>Data & IA</span>
+        </h1>
+
+        <p class="subtitle">
+          Recherche alternance dès septembre 2026 — 1 à 2 ans — France
+        </p>
+
+      </section>
+      <section class="search-block">
+        <h2>Recherche d’alternance</h2>
+
+        <div class="search-grid">
+          <div>
+            <h4>Contrat</h4>
+            <p>Alternance (1 à 2 ans)</p>
+          </div>
+
+          <div>
+            <h4>Début</h4>
+            <p>Septembre 2026</p>
+          </div>
+
+          <div>
+            <h4>Mobilité</h4>
+            <p>France entière (préférence Lille / Paris)</p>
+          </div>
+
+          <div>
+            <h4>Poursuite d’étude</h4>
+            <p>Data Science / IA / Data Engineering</p>
+          </div>
+        </div>
+      </section>
+      <!-- ABOUT -->
+      <section class="section">
+        <h2>À propos</h2>
+
+        <p>
+          Étudiant en L3 Informatique (Sciences du Numérique) à l’Institut Catholique de Lille,
+          spécialisé en Data.
+        </p>
+
+        <p>
+          Je recherche une alternance dans la data et l’intelligence artificielle.
+        </p>
+      </section>
+
+      <!-- ROLES -->
+      <section class="section alt">
+        <h2>Postes recherchés</h2>
+
+        <div class="roles">
+          <span>Data Engineer</span>
+          <span>Data Scientist</span>
+          <span>Développeur IA</span>
+          <span>Prompt Engineer</span>
+          <span>Data Architect</span>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section">
+        <div class="header">
+          <h2>Projets</h2>
+          <router-link to="/projets">Voir tout →</router-link>
+        </div>
+
+        <div class="cards">
+          <router-link
+            v-for="p in projets.slice(0,3)"
+            :key="p.id"
+            :to="`/projet/${p.id}`"
+            class="card"
+          >
+            <h3>{{ p.name }}</h3>
+            <p>{{ p.desc }}</p>
+          </router-link>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section alt">
+        <div class="header">
+          <h2>Expériences</h2>
+          <router-link to="/experiences">Voir tout →</router-link>
+        </div>
+
+        <div class="cards">
+          <router-link
+            v-for="e in experiences.slice(0,4)"
+            :key="e.id"
+            :to="`/experience/${e.id}`"
+            class="card"
+          >
+            <h3>{{ e.job }}</h3>
+            <p>{{ e.company }}</p>
+          </router-link>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <section class="stats">
+        <div>
+          <h3>10+</h3>
+          <p>Projets</p>
+        </div>
+        <div>
+          <h3>1+</h3>
+          <p>XP entreprise</p>
+        </div>
+        <div>
+          <h3>100%</h3>
+          <p>Motivation</p>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="cta">
+        <h2>Intéressé par mon profil ?</h2>
+        <router-link to="/contact" class="btn primary">
           Me contacter
         </router-link>
-      </div>
-    </section>
+      </section>
 
-    <section class="section grid">
-      <div>
-        <h2>Qui suis-je ?</h2>
-        <p>
-          Etudiant en L3 Informatique (Sciences du Numérique), en spécialité
-          Data à l'école du numérique (Institut Catholique de Lille).
-        </p>
-      </div>
-
-      <div class="card highlight">
-        <p class="small">Intérêt poste : tout ce qui est lié à la Data et IA</p>
-        <ul>
-          <li>Data Engineering</li>
-          <li>Spécialiste IA</li>
-          <li>Développeur IA</li>
-          <li>Data Scientist</li>
-          <li>Ingénieur Prompt</li>
-          <li>Data Architect</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2 class="center"><span>Projets en tendance</span></h2>
-
-      <div class="cards">
-        <router-link
-          v-for="p in projets.slice(0, 3)"
-          :key="p.id"
-          :to="`/projet/${p.id}`"
-          class="card"
-        >
-          <h3>{{ p.name }}</h3>
-          <p>{{ p.desc }}</p>
-        </router-link>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <h2 class="center"><span>Expérience</span></h2>
-
-      <div class="cards">
-        <router-link
-          v-for="e in experiences.slice(0, 4)"
-          :key="e.id"
-          :to="`/experience/${e.id}`"
-          class="card link"
-        >
-          <h3>{{ e.job }}</h3>
-          <p>{{ e.company }}</p>
-        </router-link>
-      </div>
-
-      <div class="center" style="margin-top: 40px;">
-        <router-link to="/experiences" class="btn primary">
-          Voir toutes les expériences
-        </router-link>
-      </div>
-    </section>
-
-    <section class="section stats">
-      <div>
-        <h3>10+</h3>
-        <p>Projets réalisés</p>
-      </div>
-      <div>
-        <h3>99%</h3>
-        <p>Uptime</p>
-      </div>
-      <div>
-        <h3>1+</h3>
-        <p>Ans XP (en entreprise)</p>
-      </div>
-    </section>
+    </div>
   </main>
 </template>
 
 <script setup>
 import { projets } from '@/data/projets'
 import { experiences } from '@/data/experiences'
+import { formations } from '@/data/formations'
 </script>
 
 <style scoped>
-.page {
- background: linear-gradient(
-  to bottom,
-  rgba(248, 250, 252, 0.1),
-  rgba(238, 242, 255, 0.1)
-);
-  color: #1e293b;
-  font-family: Arial, sans-serif;
-}
-
-/* LOGO */
-.logo-container {
-  display: flex;
-  justify-content: center;
+.cta h2 {
   margin-bottom: 20px;
 }
 
-.logo {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid rgba(37, 99, 235, 0.3);
-  box-shadow: 0 0 25px rgba(37, 99, 235, 0.15);
-  transition: 0.3s;
+.cta .btn {
+  display: inline-block;
+  margin-top: 10px;
+}
+/* GLOBAL */
+.page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(5, 0, 53, 0.461), rgba(51, 0, 66, 0.494));
+  padding: 40px 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1a1a1a;
 }
 
-.logo:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px rgba(37, 99, 235, 0.3);
+/* SUPPRESSION SOULIGNEMENT LIENS */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.952);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+}
+
+/* 🔥 SEARCH BLOCK */
+.search-block {
+  background: #fffffff1;
+  border: 1px solid #e5e7eb;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.search-block h2 {
+  margin-bottom: 20px;
+}
+
+.search-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.search-grid div {
+  background: #f8fafc;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.search-grid h4 {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.search-grid p {
+  font-weight: 600;
 }
 
 /* HERO */
 .hero {
   text-align: center;
-  padding: 120px 20px;
+  padding: 60px 20px;
 }
 
-.title {
-  font-size: clamp(40px, 6vw, 70px);
+.logo {
+  width: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 50px;
   font-weight: 900;
-  color: #0f172a;
 }
 
-.title span {
-  background: linear-gradient(to right, #2563eb, #38bdf8);
+.hero span {
+  background: linear-gradient(to right, #FFA233, #FFE433);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .subtitle {
-  max-width: 600px;
-  margin: 20px auto;
-  color: #64748b;
+  color: #555;
+  margin: 20px 0;
 }
 
-/* BUTTONS */
-.actions {
-  margin-top: 30px;
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-}
-
-.btn {
-  padding: 12px 24px;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: bold;
+/* FORMATION */
+.formation-block {
+  display: block;
+  margin: 30px auto 0;
+  max-width: 420px;
+  padding: 18px 22px;
+  border-radius: 15px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  text-align: center;
   transition: 0.3s;
 }
 
-.primary {
-  background: #2563eb;
-  color: white;
+.formation-block:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-.primary:hover {
-  background: #1d4ed8;
+.formation-block .school {
+  font-size: 12px;
+  color: #777;
 }
 
-.secondary {
-  border: 1px solid rgba(37, 99, 235, 0.3);
-  color: #2563eb;
+.formation-block .title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 5px 0;
 }
 
-.secondary:hover {
-  background: rgba(37, 99, 235, 0.05);
+.formation-block .link {
+  font-size: 13px;
+  color: #f59e0b;
+  font-weight: 600;
 }
 
 /* SECTIONS */
 .section {
-  padding: 80px 20px;
+  padding: 60px 10px;
 }
 
 .section.alt {
-  background: rgba(255, 255, 255, 0.249);
-  backdrop-filter: blur(10px);
+  background: #f8fafc;
+  border-radius: 15px;
+  padding: 60px 20px;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 40px;
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ROLES */
+.roles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.roles span {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 8px 14px;
+  border-radius: 20px;
 }
 
 /* CARDS */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .card {
+  background: white;
   padding: 20px;
   border-radius: 15px;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(37, 99, 235, 0.1);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-  display: block;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  background: rgba(255, 255, 255, 0.8);
-  border-color: rgba(37, 99, 235, 0.3);
-  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
-}
-
-.card h3 {
-  margin-bottom: 10px;
-  font-size: 18px;
-  color: #0f172a;
-}
-
-.card p {
-  color: #64748b;
-  font-size: 14px;
-}
-
-/* HIGHLIGHT */
-.highlight {
-  background: linear-gradient(
-    135deg,
-    rgba(37, 99, 235, 0.1),
-    rgba(56, 189, 248, 0.1)
-  );
-}
-
-/* CENTER */
-.center {
-  text-align: center;
-}
-
-.center span {
-  background: linear-gradient(to right, #2563eb, #38bdf8);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  transform: translateY(-5px);
 }
 
 /* STATS */
 .stats {
   display: flex;
-  justify-content: space-around;
-  text-align: center;
+  justify-content: center;
+  gap: 50px;
+  padding: 60px 0;
 }
 
 .stats h3 {
   font-size: 32px;
-  color: #2563eb;
+  background: linear-gradient(to right, #FFA233, #FFE433);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* TEXT */
-.small {
-  font-size: 12px;
-  color: #94a3b8;
+/* CTA */
+.cta {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+.btn {
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
 }
+
+.primary {
+  background: linear-gradient(to right, #FFA233, #FFE433);
+  color: #1a1a1a;
+}
+
 </style>
