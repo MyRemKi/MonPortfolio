@@ -14,7 +14,7 @@
 
 <script setup>
 import Background3D from "@/components/Background3D.vue"
-import Navbar from "@/components/Navbar.vue"
+import Navbar from "@/components/NavBar.vue"
 </script>
 
 <style>
