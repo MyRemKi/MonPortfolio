@@ -1,74 +1,140 @@
 <template>
-  <main class="contact-page pt-32 pb-20 px-6 max-w-4xl mx-auto">
-    <div class="contact-hub mb-12">
-      <div class="hub-card">
-        <div class="hub-header">
-          <img 
-            src="https://cdn-icons-png.flaticon.com/512/561/561127.png"
-            class="hub-icon"
-          />
+  <main class="contact-page">
 
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-bg hero-bg-left"></div>
+      <div class="hero-bg hero-bg-right"></div>
+
+      <div class="hero-content">
+        <span class="hero-subtitle">Restons en contact</span>
+
+        <h1 class="hero-title">
+          Me <span>Contacter</span>
+        </h1>
+
+        <p class="hero-text">
+          Disponible pour une alternance, une collaboration ou simplement échanger sur vos projets data & IA.
+        </p>
+      </div>
+    </section>
+
+    <!-- MAIN LAYOUT -->
+    <section class="layout">
+
+      <!-- LEFT — INFOS -->
+      <aside class="left-panel">
+
+        <!-- STATUS -->
+        <div class="status-card">
+          <span class="status-dot"></span>
           <div>
-            <p class="hub-title">Contact & Réseaux</p>
-            <p class="hub-subtitle">Disponible pour collaboration & projets</p>
+            <p class="status-title">Disponible dès sept. 2026</p>
+            <p class="status-sub">Alternance · 1 à 2 ans · France</p>
           </div>
         </div>
 
-        <div class="hub-content">
-          <div class="hub-block">
-            <p class="label">Infos Contact</p>
+        <!-- CONTACT LINKS -->
+        <div class="info-stack">
 
-            <div class="info">
-              <span>📞 +33 7 53 46 11 18</span>
-              <span>✉️ remi.kalkan@hotmail.com</span>
-            </div>
-          </div>
-
-          <a href="https://www.linkedin.com/in/remi-kalkan-6b7a06224?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2BXGjEkv%2FReK0Tb4ZZWOMKg%3D%3D" target="_blank" class="hub-block link">
-            <img 
-              src="https://cdn-icons-png.flaticon.com/512/174/174857.png"
-              class="mini-icon"
-            />
-
+          <a href="tel:+33753461118" class="info-row">
+            <div class="info-icon">📞</div>
             <div>
-              <p class="label">LinkedIn</p>
-              <p class="link-text">Voir mon profil →</p>
+              <p class="info-label">Téléphone</p>
+              <p class="info-value">+33 7 53 46 11 18</p>
             </div>
           </a>
+
+          <a href="mailto:remi.kalkan@hotmail.com" class="info-row">
+            <div class="info-icon">✉️</div>
+            <div>
+              <p class="info-label">Email</p>
+              <p class="info-value">remi.kalkan@hotmail.com</p>
+            </div>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/remi-kalkan-6b7a06224?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3B%2BXGjEkv%2FReK0Tb4ZZWOMKg%3D%3D"
+            target="_blank"
+            class="info-row"
+          >
+            <div class="info-icon">
+              <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" class="linkedin-icon" />
+            </div>
+            <div>
+              <p class="info-label">LinkedIn</p>
+              <p class="info-value link-value">Voir mon profil →</p>
+            </div>
+          </a>
+
+          <div class="info-row static">
+            <div class="info-icon">📍</div>
+            <div>
+              <p class="info-label">Localisation</p>
+              <p class="info-value">Lille / Paris · France</p>
+            </div>
+          </div>
+
         </div>
+
+        <!-- RESPONSE TIME -->
+        <div class="response-tag">
+          ⚡ Réponse sous 24h
+        </div>
+
+      </aside>
+
+      <!-- RIGHT — FORM -->
+      <div class="form-card">
+
+        <div class="form-header">
+          <span class="badge">Message direct</span>
+          <h2 class="form-title">Envoyer un <span>message</span></h2>
+          <p class="form-subtitle">Décrivez votre projet ou votre offre, je vous réponds rapidement.</p>
+        </div>
+
+        <form @submit.prevent="sendEmail" class="form-body">
+
+          <div class="form-row">
+            <div class="field">
+              <label>Prénom</label>
+              <input v-model="form.firstname" type="text" placeholder="Votre prénom" required />
+            </div>
+            <div class="field">
+              <label>Nom</label>
+              <input v-model="form.lastname" type="text" placeholder="Votre nom" required />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Email</label>
+            <input v-model="form.email" type="email" placeholder="votre@email.com" required />
+          </div>
+
+          <div class="field">
+            <label>Objet</label>
+            <input v-model="form.subject" type="text" placeholder="Alternance, collaboration, question..." required />
+          </div>
+
+          <div class="field">
+            <label>Message</label>
+            <textarea v-model="form.message" rows="5" placeholder="Décrivez votre besoin..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn" :disabled="loading">
+            {{ loading ? "Envoi en cours..." : "Envoyer le message" }}
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 12H19" stroke="currentColor" stroke-width="2"/>
+              <path d="M13 6L19 12L13 18" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </button>
+
+        </form>
+
       </div>
-    </div>
 
-    <div class="form-container bg-white/5 border border-white/10 rounded-[3rem] p-12 backdrop-blur-xl">
-      <h2 class="text-5xl font-black mb-10 tracking-tighter">
-        Contact
-        <span class="text-blue-500">spontané</span>
-      </h2>
+    </section>
 
-      <form class="space-y-6" @submit.prevent="sendEmail">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <input v-model="form.firstname" type="text" placeholder="PRÉNOM"
-            class="bg-slate-950 border border-white/10 p-4 rounded-2xl focus:border-blue-500 outline-none transition-all">
-
-          <input v-model="form.lastname" type="text" placeholder="NOM"
-            class="bg-slate-950 border border-white/10 p-4 rounded-2xl focus:border-blue-500 outline-none transition-all">
-        </div>
-
-        <input v-model="form.email" type="email" placeholder="EMAIL"
-          class="bg-slate-950 border border-white/10 p-4 rounded-2xl focus:border-blue-500 outline-none transition-all w-full">
-
-        <input v-model="form.subject" type="text" placeholder="OBJET"
-          class="bg-slate-950 border border-white/10 p-4 rounded-2xl focus:border-blue-500 outline-none transition-all w-full">
-
-        <textarea v-model="form.message" rows="5" placeholder="VOTRE MESSAGE"
-          class="w-full bg-slate-950 border border-white/10 p-4 rounded-2xl focus:border-blue-500 outline-none transition-all"></textarea>
-
-        <button type="submit"
-          class="w-full bg-orange-600 hover:bg-blue-600 text-white font-black py-5 rounded-2xl transition-all uppercase tracking-widest shadow-lg shadow-orange-500/20">
-          {{ loading ? "ENVOI..." : "Envoyer la requête" }}
-        </button>
-      </form>
-    </div>
   </main>
 </template>
 
@@ -103,7 +169,7 @@ const sendEmail = async () => {
       "oFrKYXlBuqXM8ZzAH"
     )
 
-    alert("Message envoyé avec succès 🚀")
+    alert("Message envoyé avec succès !")
 
     form.value = {
       firstname: "",
@@ -115,7 +181,7 @@ const sendEmail = async () => {
 
   } catch (error) {
     console.error(error)
-    alert("Erreur lors de l'envoi ❌")
+    alert("Erreur lors de l'envoi.")
   }
 
   loading.value = false
@@ -123,205 +189,402 @@ const sendEmail = async () => {
 </script>
 
 <style scoped>
-.contact-hub,
-.form-container {
-  width: 100%;
-  max-width: 900px;
-}
-
+/* GLOBAL */
 .contact-page {
   min-height: 100vh;
+  background: linear-gradient(135deg, #e5e7eb, #f1f5f9);
+  padding-bottom: 5rem;
+  color: #1a1a1a;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* =====================
+   HERO
+===================== */
+.hero {
+  position: relative;
+  padding: 8rem 2rem 5rem;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+}
+
+.hero-content {
+  max-width: 900px;
+  text-align: center;
+  z-index: 2;
+}
+
+.hero-subtitle {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: white;
+  color: #555;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  border: 1px solid #e5e7eb;
+}
+
+.hero-title {
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title span {
+  background: linear-gradient(to right, #FFA233, #FFE433);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  max-width: 620px;
+  margin: 0 auto;
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.hero-bg {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(120px);
+  opacity: 0.35;
+}
+
+.hero-bg-left {
+  width: 300px;
+  height: 300px;
+  background: rgba(59, 130, 246, 0.15);
+  left: 10%;
+  top: 15%;
+}
+
+.hero-bg-right {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 162, 51, 0.15);
+  right: 10%;
+  top: 10%;
+}
+
+/* =====================
+   LAYOUT 2 COLONNES
+===================== */
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+/* =====================
+   PANNEAU GAUCHE
+===================== */
+.left-panel {
   display: flex;
   flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 6rem;
+}
+
+/* STATUS */
+.status-card {
+  display: flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 40px;
-  padding-top: 120px;
-  padding-bottom: 120px;
-  position: relative;
-  isolation: isolate;
+  gap: 0.9rem;
+  padding: 1.2rem 1.4rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 
-.contact-page::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top, rgba(59,130,246,0.12), transparent 60%),
-              radial-gradient(circle at bottom, rgba(34,211,238,0.06), transparent 60%);
-  pointer-events: none;
-  z-index: 0;
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+  animation: pulse 2s infinite;
 }
 
-.form-container {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  padding: 60px;
-  border-radius: 40px;
-  background: rgba(2, 6, 23, 0.65);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  box-shadow: 0 30px 100px rgba(0,0,0,0.6), 0 0 80px rgba(59,130,246,0.08);
-  transition: all 0.4s ease;
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2); }
+  50%       { box-shadow: 0 0 0 8px rgba(34, 197, 94, 0.08); }
 }
 
-.form-container:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 40px 120px rgba(0,0,0,0.65), 0 0 120px rgba(34,211,238,0.12);
+.status-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #166534;
 }
 
-h2 {
-  font-size: 3rem;
-  line-height: 1.1;
-  margin-bottom: 20px;
-  letter-spacing: -0.05em;
-  color: white;
+.status-sub {
+  font-size: 0.8rem;
+  color: #4ade80;
+  margin-top: 0.1rem;
 }
 
-input, textarea {
-  width: 100%;
-  padding: 16px 18px;
+/* INFO STACK */
+.info-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.25rem;
   border-radius: 16px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255,255,255,0.08);
-  color: white;
-  outline: none;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  text-decoration: none;
+  color: inherit;
   transition: all 0.25s ease;
 }
 
-input:focus, textarea:focus {
-  border-color: rgba(34,211,238,0.6);
-  box-shadow: 0 0 0 4px rgba(34,211,238,0.12);
-  transform: translateY(-1px);
+.info-row:not(.static):hover {
+  transform: translateX(6px);
+  border-color: #FFA233;
+  box-shadow: 0 8px 24px rgba(255, 162, 51, 0.15);
+}
+
+.info-icon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: #fef3c7;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.linkedin-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.info-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.info-value {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: #1a1a1a;
+}
+
+.link-value {
+  color: #f59e0b;
+}
+
+/* RESPONSE TAG */
+.response-tag {
+  text-align: center;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =====================
+   FORMULAIRE (droite)
+===================== */
+.form-card {
+  padding: 2.5rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+  margin-bottom: 2rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 0.9rem;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.form-title span {
+  background: linear-gradient(to right, #FFA233, #FFE433);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.form-subtitle {
+  color: #777;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.field label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #444;
+  letter-spacing: 0.02em;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e5e7eb;
+  color: #1a1a1a;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #FFA233;
+  box-shadow: 0 0 0 3px rgba(255, 162, 51, 0.15);
+  background: white;
 }
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(255,255,255,0.35);
+  color: #bbb;
 }
 
 textarea {
-  min-height: 160px;
   resize: none;
+  min-height: 140px;
 }
 
-button {
-  position: relative;
-  overflow: hidden;
-  padding: 18px 22px;
-  border-radius: 18px;
+/* BOUTON */
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  background: linear-gradient(to right, #FFA233, #FFE433);
+  color: #1a1a1a;
   font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  background: linear-gradient(90deg, #2563eb, #22d3ee);
-  color: white;
-  box-shadow: 0 10px 40px rgba(34,211,238,0.15);
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
   transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 0.4rem;
 }
 
-button:hover {
+.submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 15px 60px rgba(34,211,238,0.25);
+  box-shadow: 0 12px 30px rgba(255, 162, 51, 0.4);
 }
 
-.contact-hub {
-  display: flex;
-  justify-content: center;
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
-.hub-card {
-  width: 100%;
-  max-width: 900px;
-  padding: 30px;
-  border-radius: 30px;
-  background: rgba(2, 6, 23, 0.65);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(25px);
-  box-shadow: 0 30px 100px rgba(0,0,0,0.5), 0 0 60px rgba(59,130,246,0.08);
-  transition: 0.3s;
+.submit-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
 }
 
-.hub-card:hover {
-  transform: translateY(-3px);
+.submit-btn:hover svg {
+  transform: translateX(4px);
 }
 
-.hub-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
-}
-
-.hub-icon {
-  width: 42px;
-  height: 42px;
-}
-
-.hub-title {
-  color: white;
-  font-weight: 800;
-  font-size: 1.3rem;
-}
-
-.hub-subtitle {
-  color: rgba(255,255,255,0.5);
-  font-size: 0.9rem;
-}
-
-.hub-content {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.hub-block {
-  padding: 18px;
-  border-radius: 18px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255,255,255,0.08);
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  transition: 0.3s;
-}
-
-.hub-block:hover {
-  border-color: rgba(59,130,246,0.4);
-  transform: translateY(-2px);
-}
-
-.label {
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-  letter-spacing: 0.1em;
-  margin-bottom: 5px;
-}
-
-.info span {
-  display: block;
-  color: white;
-  font-weight: 600;
-}
-
-.link {
-  text-decoration: none;
-}
-
-.mini-icon {
-  width: 38px;
-  height: 38px;
-}
-
-.link-text {
-  color: #3b82f6;
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .hub-content {
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 900px) {
+  .layout {
     grid-template-columns: 1fr;
   }
+  .left-panel {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .status-card {
+    grid-column: 1 / -1;
+  }
+  .info-stack {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .response-tag {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero { padding-top: 6rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-card { padding: 1.5rem; }
+  .left-panel { grid-template-columns: 1fr; }
+  .info-stack { grid-template-columns: 1fr; }
 }
 </style>

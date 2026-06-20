@@ -78,7 +78,7 @@ const closeMenu = () => {
 
 const links = [
   { name: 'Accueil', to: '/', exact: true },
-  { name: 'Experiences', to: '/experiences', exact: true },
+  { name: 'Expériences', to: '/experiences', exact: true },
   { name: 'Formations', to: '/formations' },
   { name: 'Projets', to: '/projets' },
 ]

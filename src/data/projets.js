@@ -6,7 +6,7 @@ export const projets = [
 
   status: "En cours",
   year: 2025,
-  role: "Computer Vision Developer (projet académqiue)",
+  role: "Computer Vision Developer (projet académique)",
 
   desc: "Système d’assistance pour aveugles avec détection de dangers en temps réel.",
 
@@ -21,7 +21,7 @@ export const projets = [
   stack: ["C++", "Python", "Torch", "Qt", "Git","Windows"],
 
   languages: ["C++", "SQL", "Python"],
-  libraries: ["OpenCV", "PyTorch","LibTorch", "Qt","Eigen"],
+  libraries: ["OpenCV", "PyTorch","LibTorch", "Qt","Eigen",""],
   tools: ["Git","VSCode","Cmake"],
 
   features: [
@@ -78,14 +78,14 @@ export const projets = [
       "Création des musiques",
       "Réalisation des images",
       "Conception de la maquette du jeu",
-      "Mise en application de la maquette du jeu en code Orientée Objet",
+      "Mise en application de la maquette du jeu en code Orienté Objet",
     ],
 
     challenges: [
       "Apprendre à coder un jeu 2D",
       "Appliquer des fonctionnalités avancées fonctionnalités en C++",
-      "Structuer un code",
-      "Appliquer un design propre et intuitive",
+      "Structurer un code",
+      "Appliquer un design propre et intuitif",
       "Résoudre des problèmes durant un projet",
       "Créer des bots 'IA'"
     ],

@@ -2,97 +2,100 @@ export const formations = [
   {
     id: 1,
     date: '2025 - 2026',
-    title: 'Licence Sciences du Numérique',
-    speciality: 'Data Science',
+    title: 'Licence Sciences du Numérique (3ème année)',
+    speciality: 'Spécialité Data',
     start: '2025',
     end: '2026',
-    school: 'FGES EDN',
-    details: 'Spécialisation en data science avec focus sur l’analyse de données, les modèles statistiques et les projets en intelligence artificielle.',
+    school: 'EDN, Institut Catholique de Lille',
     location: 'Lille',
+    details: "Spécialisation en Data avec focus sur l'analyse de données, les modèles statistiques et les projets en intelligence artificielle.",
     hardSkills: [
-      'Python',
       'Machine Learning',
       'Data Visualisation',
-      'SQL',
-      'Statistiques',
-      'Probabilités',
-      'UML',
+      'Statistiques & Probabilités',
       'Data Modélisation',
       'Méthodes numériques',
-      'Simulation'
+      'Travail en méthode Agile',
+      'Gestion de projet',
+      'Conception logicielle',
+      'Systèmes de gestion de bases de données',
+      'Programmation orientée objet',
+      'Programmation fonctionnelle',
+      'Développer un site web',
+      'Développer une application',
+      'Développer une application mobile',
+      'Deep Learning & Computer Vision',
     ],
     softSkills: [
-      'Analyse de données',
-      'Esprit critique',
-      'Résolution de problèmes',
-      'Communication',
-      'Travail en équipe'
+      'Rigoureux',
+      'Persévérant',
+      "Esprit d'équipe",
+      'Aisance relationnelle',
+      'Travail autonome',
+      'Sens du service'
     ],
-    description:
-      'Licence spécialisée en data science couvrant la programmation, les probabilités-statistiques et la science des données. Formation complétée par des projets appliqués en intelligence artificielle, data visualisation et modélisation de données, ainsi que des expériences en stage et gestion de projet.'
+    description: "Licence spécialisée en Data Science couvrant la programmation, les probabilités-statistiques et la science des données. Formation complétée par des projets appliqués en intelligence artificielle, data visualisation et modélisation de données, ainsi que des expériences en gestion de projet et lors des évènements IT tel que le Hackathon.",
+    tools: ['GitHub', 'Jupyter', 'VSCode', 'PowerBi', 'StarUML', 'Office 365', 'PHPMyAdmin','Laragon','Windows','Docker','StarUML','PowerBI'],
+    libraries: ['Pytorch', 'Numpy/Pandas', 'Matplotlib', 'PyQT', 'Win32 API','Openpyxl','OpenCV','PyGame','Scikit-learn','Seaborn','TensorFlow'],
+    languages: ['Python', 'C/C++', 'Java', 'SQL','JavaScript','HTML/CSS','PHP','Haskell'],
+    projects: [4]
   },
   {
     id: 2,
     date: '2021 - 2023',
-    title: 'Licence Ingénierie Web',
-    speciality: 'Data Science',
+    title: 'BTS Système Numérique',
+    speciality: 'Spécialités Informatique et Réseaux',
     start: '2021',
     end: '2023',
-    school: 'IT School',
-    details: 'Architecture logicielle, backend haute performance et cybersécurité.',
-    location: 'Paris',
-    hardSkills: ['Python', 'Machine Learning', 'Data Visualisation', 'SQL'],
-    softSkills: ['Leadership', 'Communication', 'Analyse'],
-    description:
-      'Formation avancée spécialisée dans les modèles prédictifs, l’intelligence artificielle et la visualisation de données 3D.'
+    school: 'Campus Ozanam',
+    location: 'Lille',
+    details: 'Architecture logicielle, systèmes embarqués, réseaux et administration informatique.',
+    hardSkills: [
+      'Systèmes informatiques',
+      'Réseaux informatiques',
+      'Administration informatique',
+      'Systèmes embarqués',
+      'Gestion de projet',
+      'Conception logicielle',
+    ],
+    softSkills: [
+      'Rigoureux',
+      "Esprit d'équipe",
+      'Travail autonome',
+      'Sens du service'
+    ],
+    description: "Formation technique en systèmes numériques couvrant l'informatique et les réseaux. Acquisition de bases solides en programmation, systèmes embarqués, administration informatique et gestion de projet.",
+    tools: ['GitHub', 'VSCode', 'Modelio', 'Office 365','Linux','Windows','Arduino','Raspberry Pi','CodeLite','PostgreSql','Apache'],
+    libraries: ['Standard C++ libs','ODBC','WXWidgets','SysSocket','Minidnla','Mosquitto','GrovePi'],
+    languages: ['C/C++', 'SQL','Arduino','HTML/CSS','PHP'],
+    projects: [5]
   },
   {
     id: 3,
-    date: '2021',
-    title: 'Licence Computer Science Web',
-    speciality: 'Data Science',
-    start: '2023',
-    end: '2024',
-    school: 'IT School',
-    details: 'Architecture logicielle, backend haute performance et cybersécurité.',
-    location: 'Paris',
-    hardSkills: ['Python', 'Machine Learning', 'Data Visualisation', 'SQL'],
-    softSkills: ['Leadership', 'Communication', 'Analyse'],
-    description:
-      'Formation avancée spécialisée dans les modèles prédictifs, l’intelligence artificielle et la visualisation de données 3D.'
-  },
-  {
-    id: 4,
-    date: '2026',
-    title: 'Licence Sciences du Numérique',
-    speciality: 'Informatique',
-    start: '2025',
-    end: '2026',
-    school: 'Université Catholique de Lille',
+    date: '2021 - 2023',
+    title: 'BAFA',
+    speciality: 'Colonie de vacances et centre de loisirs',
+    start: '2021',
+    end: '2023',
+    school: 'UFCV',
     location: 'Lille',
-
-    description:
-      'Licence orientée informatique permettant d’acquérir des compétences solides en programmation, bases de données, systèmes et réseaux.',
-
+    details: "Brevet d'aptitude aux fonctions d'animateur — animation de groupes en colonie de vacances et centre de loisirs.",
     hardSkills: [
-      'Programmation',
-      'Bases de données',
-      'Développement web',
-      'Systèmes',
-      'Réseaux'
+      "Animation de groupe",
+      "Organisation d'activités",
+      'Gestion de groupe',
+      'Sécurité des participants'
     ],
-
     softSkills: [
-      'Rigueur',
-      'Autonomie',
-      'Travail en équipe',
-      'Analyse'
+      'Sens du service',
+      'Aisance relationnelle',
+      "Esprit d'équipe",
+      'Persévérant'
     ],
-
-    tools: ['Git', 'Docker', 'VS Code', 'Jupyter', 'IntelliJ', 'Node', 'Cmake'],
-    libraries: ['plusieurs Vue libs', 'Pytorch', 'Qt','Kivy', 'Pandas', 'Numpy', 'Eigen'],
-    languages: ['JavaScript', 'Python', 'SQL', 'C++', 'C', 'Java', 'HTML/CSS'],
-
-    projects: [2, 3],
+    description: "Brevet d'aptitude aux fonctions d'animateur obtenu à l'UFCV de Lille. Formation axée sur l'animation, la gestion de groupes en colonie de vacances et en centre de loisirs.",
+    tools: [],
+    libraries: [],
+    languages: [],
+    projects: []
   }
 ]

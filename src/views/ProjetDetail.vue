@@ -3,120 +3,91 @@
 
     <!-- HERO -->
     <section class="hero">
-
       <div class="hero-overlay"></div>
-
-      <!-- IMAGE SAFE (IMPORTANT FIX) -->
-      <div
-        class="hero-bg"
-        :style="heroStyle"
-      ></div>
+      <div class="hero-bg" :style="heroStyle"></div>
 
       <div class="hero-content">
-
         <span class="badge">{{ projet.status }}</span>
-
         <h1>{{ projet.name }}</h1>
-
-        <!-- GLASS SUBTITLE -->
         <p class="subtitle glass">{{ projet.subtitle }}</p>
-
-        <!-- GLASS META -->
         <div class="meta glass">
           <span>{{ projet.year }}</span>
           <span>•</span>
           <span>{{ projet.role }}</span>
         </div>
-        
       </div>
-
     </section>
 
-    <!-- INTRO -->
-     <!-- LINKS -->
-     <div class="link">
-    <section class="links">
-  
-  <button class="back-btn" @click="$router.back()">
-    ← Retour
-  </button>
-
-  <a :href="projet.github" target="_blank">GitHub</a>
-
-</section>
+    <!-- LIENS -->
+    <div class="link">
+      <section class="links">
+        <button class="back-btn" @click="$router.back()">← Retour</button>
+        <a v-if="projet.github" :href="projet.github" target="_blank">GitHub</a>
+        <a v-if="projet.demo" :href="projet.demo" target="_blank">Démo</a>
+      </section>
     </div>
-    <section class="intro">
+
+    <!-- INTRO -->
+    <section v-if="projet.desc" class="intro">
       <p>{{ projet.desc }}</p>
-      
     </section>
 
     <!-- GRID -->
     <section class="grid">
 
-      <div class="card big">
+      <div v-if="projet.description" class="card big">
         <h2>Le projet</h2>
         <p>{{ projet.description }}</p>
       </div>
 
-      <div class="card">
+      <div v-if="projet.objective" class="card">
         <h2>Objectif</h2>
         <p>{{ projet.objective }}</p>
       </div>
 
-      <div class="card">
+      <div v-if="projet.progress !== undefined && projet.progress !== null" class="card">
         <h2>Progression</h2>
-
         <div class="bar">
           <div class="fill" :style="{ width: projet.progress + '%' }"></div>
         </div>
-
         <span class="percent">{{ projet.progress }}%</span>
       </div>
 
     </section>
 
     <!-- STACK -->
-    <section class="stack">
-
+    <section
+      v-if="(projet.languages && projet.languages.length) || (projet.libraries && projet.libraries.length) || (projet.tools && projet.tools.length)"
+      class="stack"
+    >
       <h2>Technologies utilisées</h2>
 
       <div class="chips">
-
-        <span v-for="l in projet.languages || []" :key="l" class="chip lang">
-          {{ l }}
-        </span>
-
-        <span v-for="l in projet.libraries || []" :key="l" class="chip lib">
-          {{ l }}
-        </span>
-
-        <span v-for="t in projet.tools || []" :key="t" class="chip tool">
-          {{ t }}
-        </span>
-
+        <span v-for="l in projet.languages || []" :key="l" class="chip lang">{{ l }}</span>
+        <span v-for="l in projet.libraries || []" :key="l" class="chip lib">{{ l }}</span>
+        <span v-for="t in projet.tools || []" :key="t" class="chip tool">{{ t }}</span>
       </div>
-
     </section>
 
-    <!-- FEATURES -->
-    <section class="section">
+    <!-- FONCTIONNALITÉS -->
+    <section v-if="projet.features && projet.features.length" class="section">
       <h2>Fonctionnalités</h2>
       <ul>
-        <li v-for="f in projet.features || []" :key="f">{{ f }}</li>
+        <li v-for="f in projet.features" :key="f">{{ f }}</li>
       </ul>
     </section>
 
     <!-- CHALLENGES -->
-    <section class="section alt">
+    <section v-if="projet.challenges && projet.challenges.length" class="section alt">
       <h2>Challenges</h2>
       <ul>
-        <li v-for="c in projet.challenges || []" :key="c">{{ c }}</li>
+        <li v-for="c in projet.challenges" :key="c">{{ c }}</li>
       </ul>
     </section>
 
-    <!-- STORY -->
-    <section class="story">
-      <h2>Retour d’expérience</h2>
+    <!-- RETOUR D'EXPÉRIENCE -->
+    <section v-if="projet.feeling" class="story">
+      <h2>Retour d'expérience</h2>
       <p>{{ projet.feeling }}</p>
     </section>
 
@@ -138,17 +109,12 @@ const projet = computed(() =>
   projets.find(p => p.id === Number(route.params.id))
 )
 
-/* ======================
-   FIX IMAGE SAFE
-====================== */
 const heroStyle = computed(() => {
   const img =
-    projet.value.image 
+    projet.value?.image ||
     "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5"
 
-  return {
-    backgroundImage: `url(${img})`
-  }
+  return { backgroundImage: `url(${img})` }
 })
 </script>
 
@@ -156,10 +122,10 @@ const heroStyle = computed(() => {
 .glass {
   opacity: 0.8;
 }
-.meta{
+.meta {
   opacity: 0.7;
 }
-/* ================= FULL PAGE BACKGROUND FIX ================= */
+
 .back-btn {
   margin-right: 10px;
   padding: 10px 20px;
@@ -175,75 +141,31 @@ const heroStyle = computed(() => {
 .back-btn:hover {
   background: #374151;
 }
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background: #f8fafc;
-}
-/* assure que le conteneur prend toute la hauteur */
+
 .page {
   min-height: 100vh;
   background: #ffffff;
   display: flex;
   flex-direction: column;
-}
-
-/* ================= GLASS EFFECT ================= */
-
-/* ================= GLASS AUTO-SIZE ================= */
-.glass {
-  display: inline-flex;
-  width: fit-content;
-
-  align-items: center;
-  gap: 0.5rem;
-
-  padding: 10px 12px;
-
-  border-radius: 12px;
-
-  background-color: rgba(46, 44, 44, 0.616);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  color: white;
-
-  white-space: nowrap;
-}
-
-/* META GLASS */
-.glass-meta {
-  display: inline-flex;
-  width: fit-content;
-
-  align-items: center;
-  gap: 0.5rem;
-
-  margin-top: 1rem;
-  padding: 6px 12px;
-
-  border-radius: 12px;
-
-  background: rgba(46, 44, 44, 0.616);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-
-  color: white;
-  font-weight: 500;
-
-  white-space: nowrap;
-}
-
-/* ================= PAGE ================= */
-.page {
   font-family: system-ui;
-  background: #f8fafc;
   color: #0f172a;
 }
 
-/* ================= HERO ================= */
+.glass {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background-color: rgba(46, 44, 44, 0.616);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: white;
+  white-space: nowrap;
+}
+
+/* HERO */
 .hero {
   position: relative;
   height: 450px;
@@ -279,12 +201,10 @@ body {
   font-weight: 900;
 }
 
-
 .meta {
   margin-top: 1rem;
 }
 
-/* BADGE */
 .badge {
   background: #f59e0b;
   padding: 6px 12px;
@@ -293,7 +213,7 @@ body {
   width: fit-content;
 }
 
-/* ================= INTRO ================= */
+/* INTRO */
 .intro {
   text-align: center;
   max-width: 700px;
@@ -301,7 +221,7 @@ body {
   font-size: 1.2rem;
 }
 
-/* ================= GRID ================= */
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -321,7 +241,7 @@ body {
   grid-column: span 1;
 }
 
-/* ================= STACK ================= */
+/* STACK */
 .stack {
   text-align: center;
   margin: 4rem 0;
@@ -341,11 +261,11 @@ body {
   font-size: 0.85rem;
 }
 
-.lang { background: #dbeafe; color: #1d4ed8; }
-.lib { background: #dcfce7; color: #166534; }
-.tool { background: #fef3c7; color: #92400e; }
+.lang  { background: #dbeafe; color: #1d4ed8; }
+.lib   { background: #dcfce7; color: #166534; }
+.tool  { background: #fef3c7; color: #92400e; }
 
-/* ================= SECTIONS ================= */
+/* SECTIONS */
 .section {
   max-width: 800px;
   margin: 3rem auto;
@@ -357,7 +277,7 @@ body {
   border-radius: 20px;
 }
 
-/* ================= STORY ================= */
+/* STORY */
 .story {
   max-width: 800px;
   margin: 4rem auto;
@@ -366,7 +286,7 @@ body {
   background: white;
 }
 
-/* ================= PROGRESS ================= */
+/* PROGRESS */
 .bar {
   height: 10px;
   background: #e2e8f0;
@@ -385,7 +305,7 @@ body {
   margin-top: 0.5rem;
 }
 
-/* ================= LINKS ================= */
+/* LIENS */
 .links {
   text-align: center;
   margin: 4rem;
@@ -404,7 +324,7 @@ body {
   background: #f59e0b;
 }
 
-/* ================= RESPONSIVE ================= */
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;
@@ -414,5 +334,4 @@ body {
     font-size: 2rem;
   }
 }
-
 </style>

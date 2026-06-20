@@ -7,7 +7,7 @@
         <h1 class="hero-title">{{ exp.job }}</h1>
         <span class="hero-id">{{ exp.contract }}</span>
         <p class="hero-subtitle">
-          {{ exp.start }} — {{ exp.end }} • {{ exp.company }}
+          {{ exp.start }} — {{ exp.end }} • {{ exp.company }}<span v-if="exp.location"> — {{ exp.location }}</span>
         </p>
       </div>
     </section>
@@ -16,18 +16,19 @@
 
       <div class="grid">
 
-        <!-- LIGNE 1 -->
-        <div class="card">
+        <!-- DESCRIPTION -->
+        <div v-if="exp.description" class="card">
           <h2>Description</h2>
           <p>{{ exp.description }}</p>
         </div>
 
+        <!-- INFORMATIONS -->
         <div class="card">
           <h2>Informations</h2>
 
           <div class="info-item">
             <span>Entreprise</span>
-            <p>{{ exp.company }}</p>
+            <p>{{ exp.company }}<template v-if="exp.location"> — {{ exp.location }}</template></p>
           </div>
 
           <div class="info-item">
@@ -41,22 +42,19 @@
           </div>
         </div>
 
-        <!-- LIGNE 2 -->
-        <div class="card">
+        <!-- TÂCHES -->
+        <div v-if="exp.tasks && exp.tasks.length" class="card">
           <h2>Tâches réalisées</h2>
           <ul>
-            <li v-for="(task, index) in exp.tasks" :key="index">
-              {{ task }}
-            </li>
+            <li v-for="(task, index) in exp.tasks" :key="index">{{ task }}</li>
           </ul>
         </div>
 
-        <div class="card">
+        <!-- OUTILS -->
+        <div v-if="exp.outils && exp.outils.length" class="card">
           <h2>Outils utilisés</h2>
           <ul>
-            <li v-for="(tool, index) in exp.outils" :key="index">
-              {{ tool }}
-            </li>
+            <li v-for="(tool, index) in exp.outils" :key="index">{{ tool }}</li>
           </ul>
         </div>
 
@@ -80,8 +78,7 @@ const id = parseInt(route.params.id)
 
 const exp = experiences.find(e => e.id === id) || {}
 
-// sécurité
-exp.tasks ||= []
+exp.tasks  ||= []
 exp.outils ||= []
 </script>
 
@@ -131,7 +128,7 @@ exp.outils ||= []
 /* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 👈 2 colonnes */
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
 }
 
@@ -150,14 +147,12 @@ exp.outils ||= []
   transform: translateY(-5px);
 }
 
-/* TITRES */
 h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
   color: #2563eb;
 }
 
-/* LISTES */
 ul {
   list-style: none;
   padding: 0;
@@ -168,7 +163,6 @@ li {
   color: #334155;
 }
 
-/* INFOS */
 .info-item span {
   display: block;
   font-size: 0.8rem;
@@ -195,7 +189,6 @@ li {
   background: linear-gradient(90deg, #f59e0b, #facc15);
 }
 
-/* RESPONSIVE */
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: 1fr;

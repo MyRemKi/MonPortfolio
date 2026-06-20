@@ -1,32 +1,34 @@
 export const experiences = [
   {
-    id: 1,
+    id: 3,
     job: "Technicien informatique",
-    company: "Caisse Primaire d’Assurance Maladie",
+    company: "Caisse Primaire d'Assurance Maladie",
+    location: "Lille",
     contract: "CDD",
-    start: "novembre 2023",
-    end: "mai 2024",
-    short: "Support IT et participation à des projets d’amélioration et de déploiement.",
+    start: "2023",
+    end: "2024",
+    short: "Support IT et participation à des projets d'amélioration et de déploiement.",
     outils: [
       "Ticketing",
       "Outils de déploiement",
-      "Assitance pour la gestion parc IT"
+      "Assistance pour la gestion du parc IT"
     ],
     tasks: [
-      "Support technique et gestion des incidents",
-      "Participation aux projets de déploiement",
-      "Gestion de l’inventaire IT",
-      "Maintenance du matériel informatique"
+      "Maintenance des systèmes informatiques",
+      "Support technique et gestion des incidents (Ticketing)",
+      "Projets d'amélioration et de déploiement",
+      "Gestion de l'inventaire IT"
     ],
-    description: "Intervention sur le support informatique avec contribution à des projets d’amélioration di SI et gestion du parc matériel."
+    description: "Intervention sur le support informatique avec contribution à des projets d'amélioration du SI et gestion du parc matériel."
   },
   {
     id: 2,
     job: "Technicien HelpDesk",
     company: "HelpLine",
+    location: "Wasquehal",
     contract: "CDI",
-    start: "octobre 2024",
-    end: "aout 2025",
+    start: "2024",
+    end: "2025",
     short: "Support technique utilisateurs et gestion des incidents IT en environnement professionnel.",
     outils: [
       "Ticketing",
@@ -35,32 +37,31 @@ export const experiences = [
       "Windows"
     ],
     tasks: [
-      "Support technique utilisateurs",
-      "Gestion des incidents (ticketing)",
-      "Prise d’appels et résolution de problèmes",
-      "Gestion des accès utilisateurs",
+      "Assistance technique aux utilisateurs",
+      "Support technique et gestion des incidents (ticketing)",
+      "Prise d'appels et résolution des incidents techniques",
+      "Gestion des accès et de la conformité utilisateurs",
       "Maintenance des systèmes informatiques"
     ],
-    description: "Gestion du support informatique au quotidien avec résolution d’incidents, assistance utilisateurs et maintien en condition opérationnelle des systèmes."
+    description: "Gestion du support informatique au quotidien avec résolution d'incidents, assistance utilisateurs et maintien en condition opérationnelle des systèmes."
   },
   {
-    id: 3,
+    id: 1,
     job: "Serveur polyvalent",
     company: "Morel et fils",
+    location: "Lille",
     contract: "Contrat étudiant",
-    start: "novembre 2025",
-    end: "en poste",
+    start: "2025",
+    end: "2026",
     short: "Expérience polyvalente en restauration avec gestion du service et relation client.",
-    outils: [
-    ],
+    outils: [],
     tasks: [
-      "Préparation du service",
-      "Accueil des clients",
+      "Participation à l'installation et à l'organisation de la terrasse, du bar et de la cuisine",
+      "Préparation des plateaux pour le service",
       "Soutien aux serveurs",
-      "Organisation terrasse et bar",
-      "Gestion des plateaux"
+      "Accueil des clients",
+      "Assurer un service fluide"
     ],
-    description: "Participation à l’organisation du service en restauration avec gestion du flux client, préparation et travail en équipe pour assurer un service fluide."
+    description: "Job étudiant : participation à l'installation et à l'organisation de la terrasse, du bar et de la cuisine, préparation des plateaux pour le service, soutien aux serveurs et accueil des clients afin d'assurer un service fluide."
   }
-  
 ]

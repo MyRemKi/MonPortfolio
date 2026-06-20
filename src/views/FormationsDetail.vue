@@ -16,13 +16,13 @@
 
       <div class="grid">
 
-        <!-- ================= LIGNE 1 ================= -->
-
-        <div class="card main line1">
+        <!-- DESCRIPTION -->
+        <div v-if="formation.description" class="card main line1">
           <h2>Description</h2>
           <p>{{ formation.description }}</p>
         </div>
 
+        <!-- INFORMATIONS -->
         <div class="card side line1">
           <h2>Informations</h2>
 
@@ -31,91 +31,74 @@
             <p>{{ formation.school }}</p>
           </div>
 
-          <div class="info-item">
+          <div v-if="formation.location" class="info-item">
             <span>Lieu</span>
             <p>{{ formation.location }}</p>
           </div>
         </div>
 
-        <!-- ================= LIGNE 2 ================= -->
-
-        <div class="line2">
-          <div class="card wide">
+        <!-- HARD + SOFT SKILLS -->
+        <div
+          v-if="(formation.hardSkills && formation.hardSkills.length) || (formation.softSkills && formation.softSkills.length)"
+          class="line2"
+        >
+          <div v-if="formation.hardSkills && formation.hardSkills.length" class="card wide">
             <h2>Hard Skills</h2>
             <ul>
-              <li v-for="skill in formation.hardSkills" :key="skill">
-                {{ skill }}
-              </li>
+              <li v-for="skill in formation.hardSkills" :key="skill">{{ skill }}</li>
             </ul>
           </div>
 
-          <div class="card wide">
+          <div v-if="formation.softSkills && formation.softSkills.length" class="card wide">
             <h2>Soft Skills</h2>
             <ul>
-              <li v-for="skill in formation.softSkills" :key="skill">
-                {{ skill }}
-              </li>
+              <li v-for="skill in formation.softSkills" :key="skill">{{ skill }}</li>
             </ul>
           </div>
         </div>
 
-        <!-- ================= LIGNE 3 ================= -->
-
-        <div class="card tools-card line3">
+        <!-- OUTILS -->
+        <div v-if="formation.tools && formation.tools.length" class="card tools-card line3">
           <h2>Outils</h2>
           <ul>
-            <li v-for="tool in formation.tools" :key="tool">
-              {{ tool }}
-            </li>
+            <li v-for="tool in formation.tools" :key="tool">{{ tool }}</li>
           </ul>
         </div>
 
-        <div class="card line3">
+        <!-- LIBRAIRIES -->
+        <div v-if="formation.libraries && formation.libraries.length" class="card line3">
           <h2>Librairies</h2>
           <ul>
-            <li v-for="lib in formation.libraries" :key="lib">
-              {{ lib }}
-            </li>
+            <li v-for="lib in formation.libraries" :key="lib">{{ lib }}</li>
           </ul>
         </div>
 
-        <div class="card line3">
+        <!-- LANGAGES -->
+        <div v-if="formation.languages && formation.languages.length" class="card line3">
           <h2>Langages</h2>
           <ul>
-            <li v-for="lang in formation.languages" :key="lang">
-              {{ lang }}
-            </li>
+            <li v-for="lang in formation.languages" :key="lang">{{ lang }}</li>
           </ul>
         </div>
 
-        <!-- ================= LIGNE 4 ================= -->
-
-        <div class="card projects-card line4">
+        <!-- PROJETS LIÉS -->
+        <div v-if="relatedProjects && relatedProjects.length" class="card projects-card line4">
           <h2>Projets</h2>
 
-          <div
-            v-for="project in relatedProjects"
-            :key="project.id"
-            class="project"
-          >
+          <div v-for="project in relatedProjects" :key="project.id" class="project">
             <router-link :to="`/projet/${project.id}`" class="project-link">
-
               <h3>{{ project.name }}</h3>
               <p class="project-desc">{{ project.desc }}</p>
 
               <div class="stack">
-                <span v-for="tech in project.stack" :key="tech">
-                  {{ tech }}
-                </span>
+                <span v-for="tech in project.stack" :key="tech">{{ tech }}</span>
               </div>
 
               <small class="project-meta">
                 {{ project.year }} • {{ project.status }}
               </small>
-
             </router-link>
           </div>
-
         </div>
 
       </div>
@@ -141,10 +124,10 @@ const formation = formations.find(f => f.id === id) || {}
 
 formation.hardSkills ||= []
 formation.softSkills ||= []
-formation.tools ||= []
-formation.libraries ||= []
-formation.languages ||= []
-formation.projects ||= []
+formation.tools      ||= []
+formation.libraries  ||= []
+formation.languages  ||= []
+formation.projects   ||= []
 
 const relatedProjects = projets.filter(p =>
   formation.projects?.includes(p.id)
@@ -164,11 +147,12 @@ const relatedProjects = projets.filter(p =>
   padding: 6rem 2rem 4rem;
 }
 
-.hero-div{
-  margin-top : 50px;
+.hero-div {
+  margin-top: 50px;
 }
+
 .hero-id {
-  color: #f59e0b; /* orange */
+  color: #f59e0b;
   font-weight: 600;
 }
 
@@ -230,19 +214,17 @@ const relatedProjects = projets.filter(p =>
 .main { grid-column: span 2; }
 .side { grid-column: span 1; }
 
-/* TITRES */
 h2 {
   font-size: 1.4rem;
   margin-bottom: 1rem;
-  color: #2563eb; /* bleu principal */
+  color: #2563eb;
 }
 
 h3 {
   margin-bottom: 1rem;
-  color: #f59e0b; /* orange */
+  color: #f59e0b;
 }
 
-/* LISTES */
 ul {
   list-style: none;
   padding: 0;
@@ -253,11 +235,10 @@ li {
   color: #334155;
 }
 
-/* INFOS */
 .info-item span {
   display: block;
   font-size: 0.8rem;
-  color: #38bdf8; /* bleu ciel */
+  color: #38bdf8;
 }
 
 /* PROJETS */
@@ -269,31 +250,22 @@ li {
   margin-bottom: 1.5rem;
 }
 
-/* ⭐ HOVER PROJETS (couleurs adaptées) */
 .project-link {
   display: block;
   text-decoration: none;
   color: inherit;
   padding: 1rem;
   border-radius: 14px;
-
   transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
   position: relative;
   overflow: hidden;
 }
 
-/* glow bleu/orange */
 .project-link::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    transparent,
-    rgba(59, 130, 246, 0.15),
-    rgba(245, 158, 11, 0.15),
-    transparent
-  );
+  background: linear-gradient(135deg, transparent, rgba(59, 130, 246, 0.15), rgba(245, 158, 11, 0.15), transparent);
   transform: translateX(-100%);
   transition: transform 0.5s ease;
 }
@@ -308,7 +280,6 @@ li {
   box-shadow: 0 12px 35px rgba(59, 130, 246, 0.2);
 }
 
-/* STACK */
 .stack span {
   display: inline-block;
   margin-right: 6px;
@@ -336,6 +307,12 @@ li {
   background: linear-gradient(90deg, #f59e0b, #facc15);
 }
 
+.wide {
+  padding: 2.5rem 3rem;
+  display: flex;
+  flex-direction: column;
+}
+
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .grid {
@@ -348,11 +325,9 @@ li {
   .line4 {
     grid-row: auto;
   }
-}
 
-.wide {
-  padding: 2.5rem 3rem;
-  display: flex;
-  flex-direction: column;
+  .line2 {
+    grid-template-columns: 1fr;
+  }
 }
 </style>
