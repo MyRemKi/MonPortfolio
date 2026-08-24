@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"public/cv\")",
+      "Bash(cp \"Remi Kalkan cv.pdf\" \"public/cv/Remi-Kalkan-CV.pdf\")",
+      "Bash(npm run *)",
+      "Bash(curl -sI http://localhost:5176/cv/Remi-Kalkan-CV.pdf)",
+      "Bash(curl -s http://localhost:5176/)",
+      "Bash(powershell -Command 'Get-Process -Name node -ErrorAction SilentlyContinue | Where-Object {$_.MainWindowTitle -eq '\\\\'''\\\\''} | Stop-Process -Force')",
+      "Bash(curl -s http://localhost:5177/)",
+      "Bash(curl -sI http://localhost:5177/cv/Remi-Kalkan-CV.pdf)"
+    ]
+  }
+}

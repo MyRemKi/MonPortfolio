@@ -143,7 +143,7 @@ export const projets = [
     feeling:
       "Projet formateur sur le développement embarqué en C++ et l’interfaçage avec du matériel réel, notamment sur la gestion des entrées/sorties et le contrôle de systèmes physiques.",
 
-    github: "",
+    github: "https://github.com/MyRemKi/Projet_2022_2023_Ventilation_ERP",
     demo: "",
 
     image:
