@@ -23,7 +23,6 @@
       <section class="links">
         <button class="back-btn" @click="$router.back()">← Retour</button>
         <a v-if="projet.github" :href="projet.github" target="_blank">GitHub</a>
-        <a v-if="projet.demo" :href="projet.demo" target="_blank">Démo</a>
       </section>
     </div>
 

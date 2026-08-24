@@ -43,7 +43,7 @@ export const projets = [
   feeling:
   "Projet à fort impact humain qui me tient particulièrement à cœur, car il combine des domaines qui m'intéressent profondément comme la Data et l’IA, tout en apportant une réelle sensibilisation aux difficultés rencontrées par les personnes aveugles.",
 
-  github: "https://github.com/ton-repo",
+  github: "https://github.com/MyRemKi/ComputerVision_Project_2025_2026",
   demo: "https://ton-live-demo.com",
 
     image:
@@ -93,7 +93,7 @@ export const projets = [
     feeling:
   "Projet particulièrement marquant pour moi, car il s’agit de ma première expérience de développement d’un projet personnel en C++ en programmation orientée objet. Il m’a permis de mieux comprendre la structuration d’un code complexe, la gestion des mécaniques en temps réel avec SFML, ainsi que les enjeux liés aux performances. J’ai également pris du plaisir à concevoir un univers de jeu de A à Z (graphismes, sons, gameplay), ce qui m’a apporté une vraie satisfaction créative. Ce projet m’a confronté à de nombreuses difficultés techniques, mais chacune d’elles a renforcé ma rigueur, ma capacité à résoudre des problèmes et mon autonomie en développement.",
 
-    github: "https://github.com/ton-repo",
+    github: "https://github.com/MyRemKi/Projet_Jeu",
     demo: "https://ton-live-demo.com",
 
     image:

@@ -28,7 +28,22 @@
         <div class="hero-cta">
           <router-link to="/projets" class="btn primary">Voir mes projets</router-link>
           <router-link to="/contact" class="btn secondary">Me contacter</router-link>
+          <a
+            href="/cv/Remi-Kalkan-CV.pdf"
+            download="Remi-Kalkan-CV.pdf"
+            class="btn cv"
+          >
+            <span class="cv-icon">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 3V15" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                <path d="M6 11L12 17L18 11" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M4 20H20" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </span>
+            Télécharger mon CV
+          </a>
         </div>
+        <p class="cv-tagline">Mon parcours, mes projets, en un clic 📄</p>
       </div>
     </section>
 
@@ -313,6 +328,72 @@ a {
   border-color: #FFA233;
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* CV BUTTON */
+.btn.cv {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  background: white;
+  border: 1.5px solid #FFA233;
+  color: #b45309;
+  animation: cv-pulse 2.4s ease-in-out infinite;
+}
+
+.btn.cv::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 20%, rgba(255,255,255,0.6) 50%, transparent 80%);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.btn.cv:hover {
+  color: #1a1a1a;
+  border-color: transparent;
+  background: linear-gradient(to right, #FFA233, #FFE433);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(255, 162, 51, 0.4);
+  animation-play-state: paused;
+}
+
+.btn.cv:hover::before {
+  transform: translateX(120%);
+}
+
+.cv-icon {
+  display: inline-flex;
+  animation: cv-bounce 1.6s ease-in-out infinite;
+}
+
+.cv-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.btn.cv:hover .cv-icon {
+  animation-duration: 0.7s;
+}
+
+@keyframes cv-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
+
+@keyframes cv-pulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(255,162,51,0); }
+  50% { box-shadow: 0 0 16px rgba(255,162,51,0.4); }
+}
+
+.cv-tagline {
+  margin: -0.5rem 0 0;
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
 }
 
 /* ========================
