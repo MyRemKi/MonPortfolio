@@ -1,3 +1,5 @@
+import exiriftImage from "../assets/exiriftimage.png";
+
 export const projets = [
   {
   id: 1,
@@ -252,7 +254,7 @@ export const projets = [
     github: "https://github.com/MyRemKi/ExiRift",
     demo: "",
 
-    image: "../assets/exiriftimage.png",
+    image: exiriftImage,
   }
 ]
 
