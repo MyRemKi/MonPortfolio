@@ -209,10 +209,10 @@ export const projets = [
     year: 2026,
     role: "Développeur C++ (Projet personnel)",
 
-    desc: "Jeu RPG/roguelike en console développé en C++ avec système de combat, loot et inventaire.",
+    desc: "Jeu d'aventure et de combat en 2D où le joueur explore des failles, affronte des monstres et récupère du butin pour devenir plus puissant.",
 
     description:
-      "Développement d'ExiRift, un jeu de rôle en console écrit en C++. Le joueur affronte des vagues d'ennemis (mobs, mini-boss et boss), récupère du butin selon des règles de drop et gère son inventaire. Le projet repose sur une architecture modulaire (Player, Enemy, Drop, Rules, Items, Random) et met l'accent sur la programmation orientée objet, la génération aléatoire et la gestion des états de jeu.",
+      "ExiRift est un jeu d'action-RPG en 2D dans lequel le joueur explore des environnements hostiles peuplés de créatures. Il affronte des vagues d'ennemis allant de simples monstres à des mini-boss et des boss redoutables. Chaque combat remporté permet de récupérer du butin : armes, équipements et objets aux raretés variées, qui renforcent le personnage au fil de la progression. Le joueur gère son inventaire, s'équipe stratégiquement et devient de plus en plus puissant pour survivre à des ennemis toujours plus dangereux.",
 
     objective:
       "Concevoir un moteur de jeu RPG en console structuré autour de la POO, intégrant un système de combat, un générateur de loot basé sur des probabilités et une gestion complète de l'inventaire.",
