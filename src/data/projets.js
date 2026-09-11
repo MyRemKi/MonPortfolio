@@ -197,5 +197,62 @@ export const projets = [
     demo: "",
 
     image: "https://th.bing.com/th/id/OIP.VZTL8GvROgXftzEm7rlfvgHaEl?w=302&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+  },
+  {
+    id: 7,
+    name: "ExiRift",
+    subtitle: "Jeu Vidéo",
+
+    status: "En cours",
+    year: 2026,
+    role: "Développeur C++ (Projet personnel)",
+
+    desc: "Jeu RPG/roguelike en console développé en C++ avec système de combat, loot et inventaire.",
+
+    description:
+      "Développement d'ExiRift, un jeu de rôle en console écrit en C++. Le joueur affronte des vagues d'ennemis (mobs, mini-boss et boss), récupère du butin selon des règles de drop et gère son inventaire. Le projet repose sur une architecture modulaire (Player, Enemy, Drop, Rules, Items, Random) et met l'accent sur la programmation orientée objet, la génération aléatoire et la gestion des états de jeu.",
+
+    objective:
+      "Concevoir un moteur de jeu RPG en console structuré autour de la POO, intégrant un système de combat, un générateur de loot basé sur des probabilités et une gestion complète de l'inventaire.",
+
+    progress: 35,
+
+    stack: ["C++"],
+
+    languages: ["C++"],
+    libraries: ["STL (iostream, string, chrono, thread,etc...)","SFML"],
+    tools: ["VSCode", "g++ / MinGW", "Windows 11"],
+
+    features: [
+      "Rendu graphique 2D en temps réel avec SFML",
+      "Affichage du joueur, des ennemis et de la carte à l'écran",
+      "Déplacement du personnage et gestion des collisions",
+      "Système de combat contre des mobs (Basic, MiniBoss, Boss)",
+      "Système de loot avec règles de drop probabilistes",
+      "Gestion de la rareté et des types d'items",
+      "Inventaire visuel du joueur (sprites, HUD)",
+      "Boucle de jeu gérée par événements et rafraîchissement d'images"
+    ],
+
+    challenges: [
+      "Concevoir une architecture modulaire et découplée (Player, Enemy, Drop, Rules, Items, Equipments, Inventory) respectant les principes de la POO",
+      "Migrer un moteur de jeu console vers un rendu graphique 2D temps réel avec SFML sans casser la logique existante",
+      "Structurer une boucle de jeu robuste séparant clairement les phases d'événements, de mise à jour (update) et de rendu (render)",
+      "Implémenter un système de loot pondéré combinant plusieurs paramètres (type de mob, rareté, tables de drop, probabilités)",
+      "Gérer la génération aléatoire de manière contrôlée et reproductible (entiers, flottants, jets de chance) au service du gameplay",
+      "Synchroniser la logique métier (combat, statistiques, inventaire) avec l'état visuel affiché à l'écran (sprites, HUD, animations)",
+      "Mettre en place un système de collisions et de déplacements fluides tout en gérant les différents états du jeu (exploration, combat, menu, inventaire)",
+      "Gérer la mémoire dynamique (allocation/libération des entités, mobs, items) et prévenir les fuites mémoire",
+      "Concevoir un système d'entités extensible via des templates/classes réutilisables pour ajouter facilement de nouveaux mobs, items et équipements",
+      "Équilibrer les nombreux paramètres de jeu (dégâts, points de vie, taux de drop, rareté) pour garder une progression cohérente"
+    ],
+
+    feeling:
+      "Projet ambitieux permettant d'approfondir la programmation orientée objet en C++, la conception d'architectures modulaires et la logique de jeu avec systèmes probabilistes.",
+    github: "https://github.com/MyRemKi/ExiRift",
+    demo: "",
+
+    image: "../assets/exiriftimage.png",
   }
 ]
+
