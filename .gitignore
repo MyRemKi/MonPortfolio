@@ -34,3 +34,6 @@ coverage
 __screenshots__/
 
 *.timestamp-*-*.mjs
+
+.vercel
+.env*
