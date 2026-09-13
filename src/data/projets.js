@@ -1,6 +1,7 @@
 import exiriftImage from "../assets/exiriftimage.png";
-import MorpionImage from "../assets/morpionimage.png";
-import VentilationImage from "../assets/ventilationimage.png"
+import MorpionImage from "../assets/morpionimage.jpg";
+import VentilationImage from "../assets/ventilationimage.png";
+
 export const projets = [
   {
   id: 1,
@@ -198,7 +199,7 @@ export const projets = [
     github: "",
     demo: "",
 
-    image: "https://th.bing.com/th/id/OIP.VZTL8GvROgXftzEm7rlfvgHaEl?w=302&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+    image: MorpionImage,
   },
   {
     id: 7,
