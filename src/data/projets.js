@@ -149,7 +149,7 @@ export const projets = [
     github: "https://github.com/MyRemKi/Projet_2022_2023_Ventilation_ERP",
     demo: "",
 
-    image: VentilationImage
+    image: VentilationImage,
   },
   {
     id: 6,
