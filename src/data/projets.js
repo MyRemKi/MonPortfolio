@@ -149,7 +149,7 @@ export const projets = [
     github: "https://github.com/MyRemKi/Projet_2022_2023_Ventilation_ERP",
     demo: "",
 
-    image:"https://queveutdire.com/wp-content/uploads/2025/03/Quest-ce-quun-raspberry-pi-Definition.jpg"
+    image: VentilationImage
   },
   {
     id: 6,
