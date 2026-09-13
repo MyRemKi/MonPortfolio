@@ -1,5 +1,6 @@
 import exiriftImage from "../assets/exiriftimage.png";
-
+import MorpionImage from "../assets/morpionimage.png";
+import VentilationImage from "../assets/ventilationimage.png"
 export const projets = [
   {
   id: 1,
@@ -148,8 +149,7 @@ export const projets = [
     github: "https://github.com/MyRemKi/Projet_2022_2023_Ventilation_ERP",
     demo: "",
 
-    image:
-    "https://queveutdire.com/wp-content/uploads/2025/03/Quest-ce-quun-raspberry-pi-Definition.jpg"
+    image:"https://queveutdire.com/wp-content/uploads/2025/03/Quest-ce-quun-raspberry-pi-Definition.jpg"
   },
   {
     id: 6,
