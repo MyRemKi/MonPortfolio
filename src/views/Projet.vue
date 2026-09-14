@@ -43,7 +43,7 @@
 
           
             class="download-button"
-            href="/installer/StuGoCO2_Setup_v7.0.exe"
+            href="https://github.com/MyRemKi/MonPortfolio/releases/download/v1.0/Rendu_Projet_Stugo_CO2_Explorer.zip"
             download
           <a>
             <span>↓</span>
