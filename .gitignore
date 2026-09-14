@@ -10,7 +10,7 @@ lerna-debug.log*
 node_modules
 .DS_Store
 dist
-public/installer/Rendu_Projet_Stugo_CO2_Explorer.zip
+installer/*.zip
 dist-ssr
 coverage
 *.local
