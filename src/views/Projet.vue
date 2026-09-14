@@ -43,7 +43,7 @@
 
           
             class="download-button"
-            href="/installer/Rendu_Projet_Stugo_CO2_Explorer.zip"
+            href="/installer/StuGoCO2_Setup_v7.0.exe"
             download
           <a>
             <span>↓</span>
