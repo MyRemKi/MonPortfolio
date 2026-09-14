@@ -45,7 +45,7 @@
             class="download-button"
             href="/installer/Rendu_Projet_Stugo_CO2_Explorer.zip"
             download
-          >
+          <a>
             <span>↓</span>
             Télécharger
           </a>
