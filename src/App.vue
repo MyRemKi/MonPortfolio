@@ -2,7 +2,7 @@
   <Background3D />
 
   <div id="app">
-    <Navbar />
+    <Navbar v-if="!route.meta.hideNavbar" />
 
     <router-view v-slot="{ Component, route }">
       <transition name="page" mode="out-in">
@@ -13,8 +13,11 @@
 </template>
 
 <script setup>
+import { useRoute } from "vue-router"
 import Background3D from "@/components/Background3D.vue"
 import Navbar from "@/components/NavBar.vue"
+
+const route = useRoute()
 </script>
 
 <style>
@@ -25,7 +28,6 @@ import Navbar from "@/components/NavBar.vue"
   transition: all 0.4s ease;
 }
 
-/* entrée */
 .page-enter-from {
   opacity: 0;
   transform: translateY(20px);
@@ -38,7 +40,6 @@ import Navbar from "@/components/NavBar.vue"
   filter: blur(0);
 }
 
-/* sortie */
 .page-leave-from {
   opacity: 1;
   transform: translateY(0);

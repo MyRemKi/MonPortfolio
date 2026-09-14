@@ -58,7 +58,8 @@ const router = createRouter({
     {
       path: '/uclednserviceinfologicielprogramme20252026', 
       name: 'projet', 
-      component: () => import('../views/Projet.vue') 
+      component: () => import('../views/Projet.vue') ,
+      meta: { hideNavbar: true }
     }
   ]
 })
