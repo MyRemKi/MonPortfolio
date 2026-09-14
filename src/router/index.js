@@ -53,6 +53,12 @@ const router = createRouter({
       path: '/contact', 
       name: 'contact', 
       component: () => import('../views/Contact.vue') 
+    },
+
+    {
+      path: '/uclednserviceinfologicielprogramme20252026', 
+      name: 'projet', 
+      component: () => import('../views/Projet.vue') 
     }
   ]
 })
