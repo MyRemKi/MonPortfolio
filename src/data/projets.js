@@ -1,7 +1,10 @@
 import exiriftImage from "../assets/exiriftimage.png";
 import MorpionImage from "../assets/morpionimage.jpg";
 import VentilationImage from "../assets/ventilationimage.png";
-
+import MthrImage from "../assets/mthrimage.png"
+import ComputerVisionImage from "../assets/ComputerVisionImage.png"
+import EscopieImage from "../assets/escopieimage.jpg"
+import StugoImage from "../assets/stugoimage.png"
 export const projets = [
   {
   id: 1,
@@ -48,10 +51,9 @@ export const projets = [
   "Projet à fort impact humain qui me tient particulièrement à cœur, car il combine des domaines qui m'intéressent profondément comme la Data et l’IA, tout en apportant une réelle sensibilisation aux difficultés rencontrées par les personnes aveugles.",
 
   github: "https://github.com/MyRemKi/ComputerVision_Project_2025_2026",
-  demo: "https://ton-live-demo.com",
+  demo: "",
 
-    image:
-      "https://miro.medium.com/v2/resize:fit:1200/0*8B8RI8neRz_7jons.jpg"
+    image:ComputerVisionImage,
   },
   {
     id: 4,
@@ -98,11 +100,10 @@ export const projets = [
   "Projet particulièrement marquant pour moi, car il s’agit de ma première expérience de développement d’un projet personnel en C++ en programmation orientée objet. Il m’a permis de mieux comprendre la structuration d’un code complexe, la gestion des mécaniques en temps réel avec SFML, ainsi que les enjeux liés aux performances. J’ai également pris du plaisir à concevoir un univers de jeu de A à Z (graphismes, sons, gameplay), ce qui m’a apporté une vraie satisfaction créative. Ce projet m’a confronté à de nombreuses difficultés techniques, mais chacune d’elles a renforcé ma rigueur, ma capacité à résoudre des problèmes et mon autonomie en développement.",
 
     github: "https://github.com/MyRemKi/Projet_Jeu",
-    demo: "https://ton-live-demo.com",
+    demo: "",
 
-    image:
-  "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/442c1ee8-6d94-44cc-a642-2d8304efabe6/degj4ds-60eaf163-191c-432b-b1db-9fcd9498d704.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ0MmMxZWU4LTZkOTQtNDRjYy1hNjQyLTJkODMwNGVmYWJlNlwvZGVnajRkcy02MGVhZjE2My0xOTFjLTQzMmItYjFkYi05ZmNkOTQ5OGQ3MDQuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FAhmB6Wo3bl3bAE8CCAySe4ujv2RWg7NIlPdtoptits"
-  },
+    image:EscopieImage,
+    },
     {
     id: 5,
     name: "Ventilation ERP",
@@ -196,7 +197,7 @@ export const projets = [
     feeling:
       "Premier projet formateur en Python, permettant de consolider les bases en algorithmique, logique de jeu et interaction utilisateur en console.",
 
-    github: "",
+    github: "https://github.com/MyRemKi/Projet_2022_2023_Ventilation_ERP",
     demo: "",
 
     image: MorpionImage,
@@ -256,6 +257,112 @@ export const projets = [
     demo: "",
 
     image: exiriftImage,
-  }
+  },
+  {
+    id: 8,
+    name: "MTHR & Capteur TH",
+    subtitle: "Domotique & Supervision Web",
+
+    status: "Terminé",
+    year: "2021 - 2023",
+    role: "Développeur Embarqué & Full-Stack (Projet Académique)",
+
+    desc: "Système domotique de relevé de température et d'humidité via un capteur branché à une Raspberry Pi 4, avec stockage en base PostgreSQL et affichage sur une page web locale.",
+
+    description:
+      "Projet académique de domotique consistant à développer un programme en C++ exécuté sur une Raspberry Pi 4, chargé de relever la température et l'humidité d'une pièce via un capteur physique. Les données mesurées sont ensuite transmises et stockées dans une base de données PostgreSQL, puis affichées en temps réel sur une page web locale accessible via PHP. Le site propose également un système d'authentification pour sécuriser l'accès aux relevés.",
+
+    objective:
+      "Concevoir une chaîne complète de domotique permettant de mesurer la température et l'humidité d'une pièce via un capteur relié à une Raspberry Pi, de stocker ces données dans une base PostgreSQL et de les restituer sur une interface web locale.",
+
+    progress: 100,
+
+    stack: ["C++", "Raspberry Pi 4", "PostgreSQL","PHP"],
+
+    languages: ["C++", "PHP", "SQL", "HTML", "CSS"],
+    libraries: ["Standard C++ libs", "libpq / connecteur PostgreSQL","lib-ic2"],
+    tools: ["Raspberry Pi 4", "Capteur Température/Humidité", "PostgreSQL", "Linux"],
+
+    features: [
+      "Programme C++ de relevé de température et d'humidité sur Raspberry Pi 4",
+      "Transmission des données mesurées vers une base PostgreSQL",
+      "Affichage en temps réel de la température intérieure",
+      "Affichage en temps réel de l'humidité intérieure",
+      "Système d'authentification (login, vérification, logout)",
+      "Page web locale de supervision",
+    ],
+
+    challenges: [
+      "Interfacer un capteur physique avec un programme C++ sur Raspberry Pi",
+      "Mettre en place la communication entre le programme C++ et une base PostgreSQL",
+      "Concevoir une base de données adaptée à l'historisation des mesures",
+      "Afficher les données en temps réel sur une page web locale",
+      "Mettre en place un système de connexion basique local pour une seule machine",
+      "Synchroniser les données sur la page"
+    ],
+
+    feeling:
+      "Un projet dans lequel je me suis beaucoup investi, car il m'a fait toucher à toute la chaîne domotique : du relevé physique en C++ sur Raspberry Pi jusqu'à l'affichage web, en passant par le stockage en base PostgreSQL. C'est le projet qui m'a vraiment donné le goût de faire dialoguer du matériel embarqué avec des applications web.",
+
+    github: "https://github.com/MyRemKi/Projet_2021_2023_MTHR-et-Capteur-TH",
+    demo: "",
+
+    image: MthrImage,
+  },
+  {
+    id: 2,
+    name: "StuGo CO2 Explorer",
+    subtitle: "Application Desktop d'Analyse de Données",
+
+    status: "Terminé",
+    year: "2025 - 2026",
+    role: "Développeur Python (Projet Professionnel)",
+
+    desc: "Application de bureau PyQt6 permettant de visualiser et d'analyser les émissions CO2 liées à la mobilité étudiante à partir de fichiers Excel.",
+
+    description:
+      "Projet professionnel de développement d'une application de bureau en Python/PyQt6 dédiée à l'analyse des émissions CO2 liées à la mobilité étudiante. L'application charge des fichiers Excel structurés par zone d'émission, calcule automatiquement les totaux, et propose de nombreux types de graphiques 2D et 3D (barres, camemberts, treemap, nuages de points...). Le projet suit une Clean Architecture à 4 couches (Présentation, Application, Domaine, Infrastructure) et intègre un outil admin autonome d'analyse de logs.",
+
+    objective:
+      "Concevoir une application desktop robuste et maintenable pour l'analyse de données CO2 étudiantes, en appliquant une architecture logicielle propre (Clean Architecture) et des design patterns reconnus, tout en offrant une interface riche en visualisations de données.",
+
+    progress: 100,
+
+    stack: ["Python", "PyQt6", "Pandas", "Matplotlib"],
+
+    languages: ["Python"],
+    libraries: ["PyQt6", "pandas", "matplotlib", "openpyxl", "squarify"],
+    tools: ["Git", "PyInstaller", "Inno Setup"],
+
+    features: [
+      "Import et validation de fichiers Excel multi-feuilles",
+      "Calcul automatique des totaux CO2 par zone d'émission",
+      "Graphiques 2D (barres, camembert, donut, aire, treemap, nuage de points)",
+      "Graphiques 3D (barres 3D, camembert 3D, cube 3D)",
+      "Comparaison multi-fichiers",
+      "Système de thèmes personnalisables",
+      "Persistance de session et des préférences utilisateur",
+      "Historique d'actions avec support undo/redo",
+      "Outil admin autonome d'analyse et de filtrage des logs",
+      "Export des données et graphiques (CSV/image)"
+    ],
+
+    challenges: [
+      "Structurer le projet selon une Clean Architecture à 4 couches sans dépendance ascendante",
+      "Mettre en place un bus d'événements central pour découpler les composants (pattern Observer)",
+      "Implémenter le pattern Command avec historique undo/redo",
+      "Gérer le rendu de graphiques 2D et 3D avec matplotlib intégré à PyQt6",
+      "Assurer une interface DPI-aware sur différents écrans",
+      "Concevoir un système de thèmes dynamique généré via un Builder de stylesheet QSS"
+    ],
+
+    feeling:
+      "Un projet professionnel particulièrement formateur, où je me suis fortement investi sur la qualité de l'architecture logicielle plutôt que sur la seule fonctionnalité. Structurer l'application en couches propres et appliquer des design patterns (Singleton, Observer, Command, Factory, Façade...) m'a fait progresser sur la conception logicielle à grande échelle, au-delà du simple 'faire fonctionner le code'.",
+
+    github: "https://github.com/MyRemKi/Projet_Professionnel_2025_2026_Stugo",
+    demo: "",
+
+    image: StugoImage,
+  },
 ]
 
