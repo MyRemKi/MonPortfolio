@@ -57,7 +57,7 @@ export const projets = [
     image:ComputerVisionImage,
   },
   {
-    id: 4,
+    id: 7,
     name: "Escopie",
     subtitle: "Jeu Vidéo",
 
@@ -154,7 +154,7 @@ export const projets = [
     image: VentilationImage,
   },
   {
-    id: 6,
+    id: 8,
     name: "Jeu Morpion",
     subtitle: "Python & Logique Algorithmique",
 
@@ -203,7 +203,7 @@ export const projets = [
     image: MorpionImage,
   },
   {
-    id: 7,
+    id: 4,
     name: "ExiRift",
     subtitle: "Jeu Vidéo",
 
@@ -258,7 +258,7 @@ export const projets = [
     image: exiriftImage,
   },
   {
-    id: 8,
+    id: 6,
     name: "MTHR & Capteur TH",
     subtitle: "Domotique & Supervision Web",
 
