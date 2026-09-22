@@ -57,258 +57,6 @@ export const projets = [
     image:ComputerVisionImage,
   },
   {
-    id: 7,
-    name: "Escopie",
-    subtitle: "Jeu Vidéo",
-
-    status: "En cours",
-    year: "2022",
-    role: "Développeur C++ (Projet Personnel)",
-
-    desc: "Jeu 2D développé en C++ avec SFML, intégrant des mécaniques de gameplay, des effets visuels et une architecture orientée objet.",
-
-    description : "Escopie est un jeu 2D en cours de développement conçu entièrement en C++ avec la bibliothèque SFML. Le projet vise à créer une expérience interactive fluide en combinant des mécaniques de gameplay dynamiques, des effets visuels soignés et une gestion optimisée des performances en temps réel. L’architecture du jeu repose sur des principes de programmation orientée objet afin d’assurer une bonne modularité et une évolutivité du code. De la conception graphique à l’intégration des systèmes de jeu (mouvements, interactions, IA), chaque composant est développé de manière progressive pour construire un univers cohérent et immersif.",
-
-    objective:
-      "Concevoir un jeu 2D en C++ en appliquant une architecture orientée objet, tout en maîtrisant la gestion des graphismes, des interactions et des performances en temps réel avec SFML.",
-
-    progress: 30,
-
-    stack: ["C++","SFML","MSYS64", "Windows"],
-
-    languages: ["C++"],
-    libraries: ["SFML"],
-    tools: ["VSCODE","MSYS64"],
-
-    features: [
-      "Création des effets sonores",
-      "Création des musiques",
-      "Réalisation des images",
-      "Conception de la maquette du jeu",
-      "Mise en application de la maquette du jeu en code Orienté Objet",
-    ],
-
-    challenges: [
-      "Apprendre à coder un jeu 2D",
-      "Appliquer des fonctionnalités avancées fonctionnalités en C++",
-      "Structurer un code",
-      "Appliquer un design propre et intuitif",
-      "Résoudre des problèmes durant un projet",
-      "Créer des bots 'IA'"
-    ],
-
-    feeling:"Projet particulièrement marquant pour moi, car il s’agit de ma première expérience de développement d’un projet personnel en C++ en programmation orientée objet. Il m’a permis de mieux comprendre la structuration d’un code complexe, la gestion des mécaniques en temps réel avec SFML, ainsi que les enjeux liés aux performances. J’ai également pris du plaisir à concevoir un univers de jeu de A à Z (graphismes, sons, gameplay), ce qui m’a apporté une vraie satisfaction créative. Ce projet m’a confronté à de nombreuses difficultés techniques, mais chacune d’elles a renforcé ma rigueur, ma capacité à résoudre des problèmes et mon autonomie en développement.",
-
-    github: "https://github.com/MyRemKi/Projet_Jeu",
-    demo: "",
-
-    image:EscopieImage,
-  },
-  {
-    id: 5,
-    name: "Ventilation ERP",
-    subtitle: "Système embarqué & Électronique",
-
-    status: "Terminé",
-    year: "2022 - 2023",
-    role: "Développeur Embarqué C++ (Projet Académique)",
-
-    desc: "Système embarqué de gestion de ventilation visant à contrôler le débit d’air et la puissance pour améliorer la qualité de l’air.",
-
-    description:
-      "Projet académique de développement d’un système embarqué permettant de contrôler une ventilation. Le programme en C++ gère les entrées et sorties afin d’ajuster la puissance de ventilation et relever le débit d’air. Le système est connecté à une Raspberry Pi avec des modules GrovePi pour l’interfaçage matériel.",
-
-    objective:
-      "Développer un programme en C++ capable de piloter une ventilation en fonction des données mesurées, afin d’améliorer la qualité de l’air dans un environnement intérieur.",
-
-    progress: 90,
-
-    stack: ["C++","GrovePi", "Linux"],
-
-    languages: ["C++"],
-    libraries: ["Standard C++ libs", "GrovePi libs"],
-    tools: ["CodeLite", "Linux", "Raspberry Pi", "GrovePi"],
-
-    features: [
-      "Gestion des entrées/sorties en C++",
-      "Contrôle de la puissance de ventilation",
-      "Lecture du débit d’air",
-      "Interfaçage matériel avec Raspberry Pi",
-      "Câblage et utilisation de modules GrovePi"
-    ],
-
-    challenges: [
-      "Comprendre le fonctionnement d’un système embarqué",
-      "Gérer les entrées/sorties matérielles en C++",
-      "Mettre en place une communication avec les composants physiques",
-      "Assurer un contrôle fiable de la ventilation",
-      "Travailler sous environnement Linux"
-    ],
-
-    feeling:
-      "Projet formateur sur le développement embarqué en C++ et l’interfaçage avec du matériel réel, notamment sur la gestion des entrées/sorties et le contrôle de systèmes physiques.",
-
-    github: "https://github.com/MyRemKi/Projet_2022_2023_Ventilation_ERP",
-    demo: "",
-
-    image: VentilationImage,
-  },
-  {
-    id: 8,
-    name: "Jeu Morpion",
-    subtitle: "Python & Logique Algorithmique",
-
-    status: "Terminé",
-    year: "2018 - 2019",
-    role: "Développeur Python (Projet Académique)",
-
-    desc: "Jeu de morpion en console développé en Python avec mode multijoueur local et IA.",
-
-    description:
-      "Développement d’un jeu de morpion (tic-tac-toe) en Python fonctionnant entièrement en console. Le projet permet de jouer en local à deux joueurs ou contre une intelligence artificielle simple. L’accent a été mis sur la logique algorithmique, la gestion des entrées utilisateur et la structure du code.",
-
-    objective:
-      "Concevoir un jeu en console en Python intégrant une logique de jeu complète, un mode multijoueur local et une IA capable de prendre des décisions simples.",
-
-    progress: 100,
-
-    stack: ["Python"],
-
-    languages: ["Python"],
-    libraries: ["Pas de libs"],
-    tools: ["VSCode","Windows 10"],
-
-    features: [
-      "Mode 1 vs 1 en local",
-      "Mode joueur contre IA",
-      "Interface en ligne de commande",
-      "Gestion des entrées utilisateur",
-      "Détection des conditions de victoire et d’égalité"
-    ],
-
-    challenges: [
-      "Implémenter la logique complète du morpion",
-      "Créer une IA simple pour jouer contre l’utilisateur",
-      "Gérer les entrées utilisateur de manière fiable",
-      "Structurer le code de manière claire",
-      "Gérer les différents états du jeu"
-    ],
-
-    feeling:
-      "Premier projet formateur en Python, permettant de consolider les bases en algorithmique, logique de jeu et interaction utilisateur en console.",
-
-    github: "https://github.com/MyRemKi/Projet_2018_2019_Jeu_Morpion_Console",
-    demo: "",
-
-    image: MorpionImage,
-  },
-  {
-    id: 4,
-    name: "ExiRift",
-    subtitle: "Jeu Vidéo",
-
-    status: "En cours",
-    year: 2026,
-    role: "Développeur C++ (Projet personnel)",
-
-    desc: "Jeu d'aventure et de combat en 2D où le joueur explore des failles, affronte des monstres et récupère du butin pour devenir plus puissant.",
-
-    description:
-      "ExiRift est un jeu d'action-RPG en 2D dans lequel le joueur explore des environnements hostiles peuplés de créatures. Il affronte des vagues d'ennemis allant de simples monstres à des mini-boss et des boss redoutables. Chaque combat remporté permet de récupérer du butin : armes, équipements et objets aux raretés variées, qui renforcent le personnage au fil de la progression. Le joueur gère son inventaire, s'équipe stratégiquement et devient de plus en plus puissant pour survivre à des ennemis toujours plus dangereux.",
-
-    objective:
-      "Concevoir un moteur de jeu RPG en console structuré autour de la POO, intégrant un système de combat, un générateur de loot basé sur des probabilités et une gestion complète de l'inventaire.",
-
-    progress: 35,
-
-    stack: ["C++"],
-
-    languages: ["C++"],
-    libraries: ["STL (iostream, string, chrono, thread,etc...)","SFML"],
-    tools: ["VSCode", "g++ / MinGW", "Windows 11"],
-
-    features: [
-      "Rendu graphique 2D en temps réel avec SFML",
-      "Affichage du joueur, des ennemis et de la carte à l'écran",
-      "Déplacement du personnage et gestion des collisions",
-      "Système de combat contre des mobs (Basic, MiniBoss, Boss)",
-      "Système de loot avec règles de drop probabilistes",
-      "Gestion de la rareté et des types d'items",
-      "Inventaire visuel du joueur (sprites, HUD)",
-      "Boucle de jeu gérée par événements et rafraîchissement d'images"
-    ],
-
-    challenges: [
-      "Concevoir une architecture modulaire et découplée (Player, Enemy, Drop, Rules, Items, Equipments, Inventory) respectant les principes de la POO",
-      "Migrer un moteur de jeu console vers un rendu graphique 2D temps réel avec SFML sans casser la logique existante",
-      "Structurer une boucle de jeu robuste séparant clairement les phases d'événements, de mise à jour (update) et de rendu (render)",
-      "Implémenter un système de loot pondéré combinant plusieurs paramètres (type de mob, rareté, tables de drop, probabilités)",
-      "Gérer la génération aléatoire de manière contrôlée et reproductible (entiers, flottants, jets de chance) au service du gameplay",
-      "Synchroniser la logique métier (combat, statistiques, inventaire) avec l'état visuel affiché à l'écran (sprites, HUD, animations)",
-      "Mettre en place un système de collisions et de déplacements fluides tout en gérant les différents états du jeu (exploration, combat, menu, inventaire)",
-      "Gérer la mémoire dynamique (allocation/libération des entités, mobs, items) et prévenir les fuites mémoire",
-      "Concevoir un système d'entités extensible via des templates/classes réutilisables pour ajouter facilement de nouveaux mobs, items et équipements",
-      "Équilibrer les nombreux paramètres de jeu (dégâts, points de vie, taux de drop, rareté) pour garder une progression cohérente"
-    ],
-
-    feeling:"Projet ambitieux permettant d'approfondir la programmation orientée objet en C++, la conception d'architectures modulaires et la logique de jeu avec systèmes probabilistes.",
-    github: "https://github.com/MyRemKi/ExiRift",
-    demo: "",
-
-    image: exiriftImage,
-  },
-  {
-    id: 6,
-    name: "MTHR & Capteur TH",
-    subtitle: "Domotique & Supervision Web",
-
-    status: "Terminé",
-    year: "2021 - 2022",
-    role: "Développeur Embarqué & Full-Stack (Projet Académique)",
-
-    desc: "Système domotique de relevé de température et d'humidité via un capteur branché à une Raspberry Pi 4, avec stockage en base PostgreSQL et affichage sur une page web locale.",
-
-    description:
-      "Projet académique de domotique consistant à développer un programme en C++ exécuté sur une Raspberry Pi 4, chargé de relever la température et l'humidité d'une pièce via un capteur physique. Les données mesurées sont ensuite transmises et stockées dans une base de données PostgreSQL, puis affichées en temps réel sur une page web locale accessible via PHP. Le site propose également un système d'authentification pour sécuriser l'accès aux relevés.",
-
-    objective:
-      "Concevoir une chaîne complète de domotique permettant de mesurer la température et l'humidité d'une pièce via un capteur relié à une Raspberry Pi, de stocker ces données dans une base PostgreSQL et de les restituer sur une interface web locale.",
-
-    progress: 100,
-
-    stack: ["C++", "Raspberry Pi 4", "PostgreSQL","PHP"],
-
-    languages: ["C++", "PHP", "SQL", "HTML", "CSS"],
-    libraries: ["Standard C++ libs", "libpq / connecteur PostgreSQL","lib-ic2"],
-    tools: ["Raspberry Pi 4", "Capteur Température/Humidité", "PostgreSQL", "Linux"],
-
-    features: [
-      "Programme C++ de relevé de température et d'humidité sur Raspberry Pi 4",
-      "Transmission des données mesurées vers une base PostgreSQL",
-      "Affichage en temps réel de la température intérieure",
-      "Affichage en temps réel de l'humidité intérieure",
-      "Système d'authentification (login, vérification, logout)",
-      "Page web locale de supervision",
-    ],
-
-    challenges: [
-      "Interfacer un capteur physique avec un programme C++ sur Raspberry Pi",
-      "Mettre en place la communication entre le programme C++ et une base PostgreSQL",
-      "Concevoir une base de données adaptée à l'historisation des mesures",
-      "Afficher les données en temps réel sur une page web locale",
-      "Mettre en place un système de connexion basique local pour une seule machine",
-      "Synchroniser les données sur la page"
-    ],
-
-    feeling:
-      "Un projet dans lequel je me suis beaucoup investi, car il m'a fait toucher à toute la chaîne domotique : du relevé physique en C++ sur Raspberry Pi jusqu'à l'affichage web, en passant par le stockage en base PostgreSQL. C'est le projet qui m'a vraiment donné le goût de faire dialoguer du matériel embarqué avec des applications web.",
-
-    github: "https://github.com/MyRemKi/Projet_2021_2023_MTHR-et-Capteur-TH",
-    demo: "",
-
-    image: MthrImage,
-  },
-  {
     id: 2,
     name: "StuGo CO2 Explorer",
     subtitle: "Application Desktop d'Analyse de Données",
@@ -419,5 +167,257 @@ export const projets = [
 
     image: CardiaqueImage,
   },
+  {
+    id: 4,
+    name: "ExiRift",
+    subtitle: "Jeu Vidéo",
+
+    status: "En cours",
+    year: 2026,
+    role: "Développeur C++ (Projet personnel)",
+
+    desc: "Jeu d'aventure et de combat en 2D où le joueur explore des failles, affronte des monstres et récupère du butin pour devenir plus puissant.",
+
+    description:
+      "ExiRift est un jeu d'action-RPG en 2D dans lequel le joueur explore des environnements hostiles peuplés de créatures. Il affronte des vagues d'ennemis allant de simples monstres à des mini-boss et des boss redoutables. Chaque combat remporté permet de récupérer du butin : armes, équipements et objets aux raretés variées, qui renforcent le personnage au fil de la progression. Le joueur gère son inventaire, s'équipe stratégiquement et devient de plus en plus puissant pour survivre à des ennemis toujours plus dangereux.",
+
+    objective:
+      "Concevoir un moteur de jeu RPG en console structuré autour de la POO, intégrant un système de combat, un générateur de loot basé sur des probabilités et une gestion complète de l'inventaire.",
+
+    progress: 35,
+
+    stack: ["C++"],
+
+    languages: ["C++"],
+    libraries: ["STL (iostream, string, chrono, thread,etc...)","SFML"],
+    tools: ["VSCode", "g++ / MinGW", "Windows 11"],
+
+    features: [
+      "Rendu graphique 2D en temps réel avec SFML",
+      "Affichage du joueur, des ennemis et de la carte à l'écran",
+      "Déplacement du personnage et gestion des collisions",
+      "Système de combat contre des mobs (Basic, MiniBoss, Boss)",
+      "Système de loot avec règles de drop probabilistes",
+      "Gestion de la rareté et des types d'items",
+      "Inventaire visuel du joueur (sprites, HUD)",
+      "Boucle de jeu gérée par événements et rafraîchissement d'images"
+    ],
+
+    challenges: [
+      "Concevoir une architecture modulaire et découplée (Player, Enemy, Drop, Rules, Items, Equipments, Inventory) respectant les principes de la POO",
+      "Migrer un moteur de jeu console vers un rendu graphique 2D temps réel avec SFML sans casser la logique existante",
+      "Structurer une boucle de jeu robuste séparant clairement les phases d'événements, de mise à jour (update) et de rendu (render)",
+      "Implémenter un système de loot pondéré combinant plusieurs paramètres (type de mob, rareté, tables de drop, probabilités)",
+      "Gérer la génération aléatoire de manière contrôlée et reproductible (entiers, flottants, jets de chance) au service du gameplay",
+      "Synchroniser la logique métier (combat, statistiques, inventaire) avec l'état visuel affiché à l'écran (sprites, HUD, animations)",
+      "Mettre en place un système de collisions et de déplacements fluides tout en gérant les différents états du jeu (exploration, combat, menu, inventaire)",
+      "Gérer la mémoire dynamique (allocation/libération des entités, mobs, items) et prévenir les fuites mémoire",
+      "Concevoir un système d'entités extensible via des templates/classes réutilisables pour ajouter facilement de nouveaux mobs, items et équipements",
+      "Équilibrer les nombreux paramètres de jeu (dégâts, points de vie, taux de drop, rareté) pour garder une progression cohérente"
+    ],
+
+    feeling:"Projet ambitieux permettant d'approfondir la programmation orientée objet en C++, la conception d'architectures modulaires et la logique de jeu avec systèmes probabilistes.",
+    github: "https://github.com/MyRemKi/ExiRift",
+    demo: "",
+
+    image: exiriftImage,
+  },
+  {
+    id: 5,
+    name: "Ventilation ERP",
+    subtitle: "Système embarqué & Électronique",
+
+    status: "Terminé",
+    year: "2022 - 2023",
+    role: "Développeur Embarqué C++ (Projet Académique)",
+
+    desc: "Système embarqué de gestion de ventilation visant à contrôler le débit d’air et la puissance pour améliorer la qualité de l’air.",
+
+    description:
+      "Projet académique de développement d’un système embarqué permettant de contrôler une ventilation. Le programme en C++ gère les entrées et sorties afin d’ajuster la puissance de ventilation et relever le débit d’air. Le système est connecté à une Raspberry Pi avec des modules GrovePi pour l’interfaçage matériel.",
+
+    objective:
+      "Développer un programme en C++ capable de piloter une ventilation en fonction des données mesurées, afin d’améliorer la qualité de l’air dans un environnement intérieur.",
+
+    progress: 90,
+
+    stack: ["C++","GrovePi", "Linux"],
+
+    languages: ["C++"],
+    libraries: ["Standard C++ libs", "GrovePi libs"],
+    tools: ["CodeLite", "Linux", "Raspberry Pi", "GrovePi"],
+
+    features: [
+      "Gestion des entrées/sorties en C++",
+      "Contrôle de la puissance de ventilation",
+      "Lecture du débit d’air",
+      "Interfaçage matériel avec Raspberry Pi",
+      "Câblage et utilisation de modules GrovePi"
+    ],
+
+    challenges: [
+      "Comprendre le fonctionnement d’un système embarqué",
+      "Gérer les entrées/sorties matérielles en C++",
+      "Mettre en place une communication avec les composants physiques",
+      "Assurer un contrôle fiable de la ventilation",
+      "Travailler sous environnement Linux"
+    ],
+
+    feeling:
+      "Projet formateur sur le développement embarqué en C++ et l’interfaçage avec du matériel réel, notamment sur la gestion des entrées/sorties et le contrôle de systèmes physiques.",
+
+    github: "https://github.com/MyRemKi/Projet_2022_2023_Ventilation_ERP",
+    demo: "",
+
+    image: VentilationImage,
+  },
+  {
+    id: 6,
+    name: "MTHR & Capteur TH",
+    subtitle: "Domotique & Supervision Web",
+
+    status: "Terminé",
+    year: "2021 - 2022",
+    role: "Développeur Embarqué & Full-Stack (Projet Académique)",
+
+    desc: "Système domotique de relevé de température et d'humidité via un capteur branché à une Raspberry Pi 4, avec stockage en base PostgreSQL et affichage sur une page web locale.",
+
+    description:
+      "Projet académique de domotique consistant à développer un programme en C++ exécuté sur une Raspberry Pi 4, chargé de relever la température et l'humidité d'une pièce via un capteur physique. Les données mesurées sont ensuite transmises et stockées dans une base de données PostgreSQL, puis affichées en temps réel sur une page web locale accessible via PHP. Le site propose également un système d'authentification pour sécuriser l'accès aux relevés.",
+
+    objective:
+      "Concevoir une chaîne complète de domotique permettant de mesurer la température et l'humidité d'une pièce via un capteur relié à une Raspberry Pi, de stocker ces données dans une base PostgreSQL et de les restituer sur une interface web locale.",
+
+    progress: 100,
+
+    stack: ["C++", "Raspberry Pi 4", "PostgreSQL","PHP"],
+
+    languages: ["C++", "PHP", "SQL", "HTML", "CSS"],
+    libraries: ["Standard C++ libs", "libpq / connecteur PostgreSQL","lib-ic2"],
+    tools: ["Raspberry Pi 4", "Capteur Température/Humidité", "PostgreSQL", "Linux"],
+
+    features: [
+      "Programme C++ de relevé de température et d'humidité sur Raspberry Pi 4",
+      "Transmission des données mesurées vers une base PostgreSQL",
+      "Affichage en temps réel de la température intérieure",
+      "Affichage en temps réel de l'humidité intérieure",
+      "Système d'authentification (login, vérification, logout)",
+      "Page web locale de supervision",
+    ],
+
+    challenges: [
+      "Interfacer un capteur physique avec un programme C++ sur Raspberry Pi",
+      "Mettre en place la communication entre le programme C++ et une base PostgreSQL",
+      "Concevoir une base de données adaptée à l'historisation des mesures",
+      "Afficher les données en temps réel sur une page web locale",
+      "Mettre en place un système de connexion basique local pour une seule machine",
+      "Synchroniser les données sur la page"
+    ],
+
+    feeling:
+      "Un projet dans lequel je me suis beaucoup investi, car il m'a fait toucher à toute la chaîne domotique : du relevé physique en C++ sur Raspberry Pi jusqu'à l'affichage web, en passant par le stockage en base PostgreSQL. C'est le projet qui m'a vraiment donné le goût de faire dialoguer du matériel embarqué avec des applications web.",
+
+    github: "https://github.com/MyRemKi/Projet_2021_2023_MTHR-et-Capteur-TH",
+    demo: "",
+
+    image: MthrImage,
+  },
+  {
+    id: 7,
+    name: "Escopie",
+    subtitle: "Jeu Vidéo",
+
+    status: "En cours",
+    year: "2022",
+    role: "Développeur C++ (Projet Personnel)",
+
+    desc: "Jeu 2D développé en C++ avec SFML, intégrant des mécaniques de gameplay, des effets visuels et une architecture orientée objet.",
+
+    description : "Escopie est un jeu 2D en cours de développement conçu entièrement en C++ avec la bibliothèque SFML. Le projet vise à créer une expérience interactive fluide en combinant des mécaniques de gameplay dynamiques, des effets visuels soignés et une gestion optimisée des performances en temps réel. L’architecture du jeu repose sur des principes de programmation orientée objet afin d’assurer une bonne modularité et une évolutivité du code. De la conception graphique à l’intégration des systèmes de jeu (mouvements, interactions, IA), chaque composant est développé de manière progressive pour construire un univers cohérent et immersif.",
+
+    objective:
+      "Concevoir un jeu 2D en C++ en appliquant une architecture orientée objet, tout en maîtrisant la gestion des graphismes, des interactions et des performances en temps réel avec SFML.",
+
+    progress: 30,
+
+    stack: ["C++","SFML","MSYS64", "Windows"],
+
+    languages: ["C++"],
+    libraries: ["SFML"],
+    tools: ["VSCODE","MSYS64"],
+
+    features: [
+      "Création des effets sonores",
+      "Création des musiques",
+      "Réalisation des images",
+      "Conception de la maquette du jeu",
+      "Mise en application de la maquette du jeu en code Orienté Objet",
+    ],
+
+    challenges: [
+      "Apprendre à coder un jeu 2D",
+      "Appliquer des fonctionnalités avancées fonctionnalités en C++",
+      "Structurer un code",
+      "Appliquer un design propre et intuitif",
+      "Résoudre des problèmes durant un projet",
+      "Créer des bots 'IA'"
+    ],
+
+    feeling:"Projet particulièrement marquant pour moi, car il s’agit de ma première expérience de développement d’un projet personnel en C++ en programmation orientée objet. Il m’a permis de mieux comprendre la structuration d’un code complexe, la gestion des mécaniques en temps réel avec SFML, ainsi que les enjeux liés aux performances. J’ai également pris du plaisir à concevoir un univers de jeu de A à Z (graphismes, sons, gameplay), ce qui m’a apporté une vraie satisfaction créative. Ce projet m’a confronté à de nombreuses difficultés techniques, mais chacune d’elles a renforcé ma rigueur, ma capacité à résoudre des problèmes et mon autonomie en développement.",
+
+    github: "https://github.com/MyRemKi/Projet_Jeu",
+    demo: "",
+
+    image:EscopieImage,
+  },
+  {
+    id: 8,
+    name: "Jeu Morpion",
+    subtitle: "Python & Logique Algorithmique",
+
+    status: "Terminé",
+    year: "2018 - 2019",
+    role: "Développeur Python (Projet Académique)",
+
+    desc: "Jeu de morpion en console développé en Python avec mode multijoueur local et IA.",
+
+    description:
+      "Développement d’un jeu de morpion (tic-tac-toe) en Python fonctionnant entièrement en console. Le projet permet de jouer en local à deux joueurs ou contre une intelligence artificielle simple. L’accent a été mis sur la logique algorithmique, la gestion des entrées utilisateur et la structure du code.",
+
+    objective:
+      "Concevoir un jeu en console en Python intégrant une logique de jeu complète, un mode multijoueur local et une IA capable de prendre des décisions simples.",
+
+    progress: 100,
+
+    stack: ["Python"],
+
+    languages: ["Python"],
+    libraries: ["Pas de libs"],
+    tools: ["VSCode","Windows 10"],
+
+    features: [
+      "Mode 1 vs 1 en local",
+      "Mode joueur contre IA",
+      "Interface en ligne de commande",
+      "Gestion des entrées utilisateur",
+      "Détection des conditions de victoire et d’égalité"
+    ],
+
+    challenges: [
+      "Implémenter la logique complète du morpion",
+      "Créer une IA simple pour jouer contre l’utilisateur",
+      "Gérer les entrées utilisateur de manière fiable",
+      "Structurer le code de manière claire",
+      "Gérer les différents états du jeu"
+    ],
+
+    feeling:
+      "Premier projet formateur en Python, permettant de consolider les bases en algorithmique, logique de jeu et interaction utilisateur en console.",
+
+    github: "https://github.com/MyRemKi/Projet_2018_2019_Jeu_Morpion_Console",
+    demo: "",
+
+    image: MorpionImage,
+  }
 ]
 
