@@ -5,6 +5,7 @@ import MthrImage from "../assets/mthrimage.png"
 import ComputerVisionImage from "../assets/ComputerVisionImage.png"
 import EscopieImage from "../assets/escopieimage.jpg"
 import StugoImage from "../assets/stugoimage.png"
+import CardiaqueImage from "../assets/cardiaqueimage.jpg"
 export const projets = [
   {
   id: 1,
@@ -12,7 +13,7 @@ export const projets = [
   subtitle: "Data + IA + Vision Assistive",
 
   status: "En cours",
-  year: 2025,
+  year: "2025 - 2026",
   role: "Computer Vision Developer (projet académique)",
 
   desc: "Système d’assistance pour aveugles avec détection de dangers en temps réel.",
@@ -23,7 +24,7 @@ export const projets = [
   objective:
     "Créer un dispositif capable d’analyser l’environnement en temps réel pour prévenir les dangers et alerter les secours en cas d’incident.",
 
-  progress: 80,
+  progress: 20,
 
   stack: ["C++", "Python", "Torch", "Qt", "Git","Windows"],
 
@@ -96,15 +97,14 @@ export const projets = [
       "Créer des bots 'IA'"
     ],
 
-    feeling:
-  "Projet particulièrement marquant pour moi, car il s’agit de ma première expérience de développement d’un projet personnel en C++ en programmation orientée objet. Il m’a permis de mieux comprendre la structuration d’un code complexe, la gestion des mécaniques en temps réel avec SFML, ainsi que les enjeux liés aux performances. J’ai également pris du plaisir à concevoir un univers de jeu de A à Z (graphismes, sons, gameplay), ce qui m’a apporté une vraie satisfaction créative. Ce projet m’a confronté à de nombreuses difficultés techniques, mais chacune d’elles a renforcé ma rigueur, ma capacité à résoudre des problèmes et mon autonomie en développement.",
+    feeling:"Projet particulièrement marquant pour moi, car il s’agit de ma première expérience de développement d’un projet personnel en C++ en programmation orientée objet. Il m’a permis de mieux comprendre la structuration d’un code complexe, la gestion des mécaniques en temps réel avec SFML, ainsi que les enjeux liés aux performances. J’ai également pris du plaisir à concevoir un univers de jeu de A à Z (graphismes, sons, gameplay), ce qui m’a apporté une vraie satisfaction créative. Ce projet m’a confronté à de nombreuses difficultés techniques, mais chacune d’elles a renforcé ma rigueur, ma capacité à résoudre des problèmes et mon autonomie en développement.",
 
     github: "https://github.com/MyRemKi/Projet_Jeu",
     demo: "",
 
     image:EscopieImage,
-    },
-    {
+  },
+  {
     id: 5,
     name: "Ventilation ERP",
     subtitle: "Système embarqué & Électronique",
@@ -159,7 +159,7 @@ export const projets = [
     subtitle: "Python & Logique Algorithmique",
 
     status: "Terminé",
-    year: 2019,
+    year: "2018 - 2019",
     role: "Développeur Python (Projet Académique)",
 
     desc: "Jeu de morpion en console développé en Python avec mode multijoueur local et IA.",
@@ -197,7 +197,7 @@ export const projets = [
     feeling:
       "Premier projet formateur en Python, permettant de consolider les bases en algorithmique, logique de jeu et interaction utilisateur en console.",
 
-    github: "https://github.com/MyRemKi/Projet_2022_2023_Ventilation_ERP",
+    github: "https://github.com/MyRemKi/Projet_2018_2019_Jeu_Morpion_Console",
     demo: "",
 
     image: MorpionImage,
@@ -251,8 +251,7 @@ export const projets = [
       "Équilibrer les nombreux paramètres de jeu (dégâts, points de vie, taux de drop, rareté) pour garder une progression cohérente"
     ],
 
-    feeling:
-      "Projet ambitieux permettant d'approfondir la programmation orientée objet en C++, la conception d'architectures modulaires et la logique de jeu avec systèmes probabilistes.",
+    feeling:"Projet ambitieux permettant d'approfondir la programmation orientée objet en C++, la conception d'architectures modulaires et la logique de jeu avec systèmes probabilistes.",
     github: "https://github.com/MyRemKi/ExiRift",
     demo: "",
 
@@ -264,7 +263,7 @@ export const projets = [
     subtitle: "Domotique & Supervision Web",
 
     status: "Terminé",
-    year: "2021 - 2023",
+    year: "2021 - 2022",
     role: "Développeur Embarqué & Full-Stack (Projet Académique)",
 
     desc: "Système domotique de relevé de température et d'humidité via un capteur branché à une Raspberry Pi 4, avec stockage en base PostgreSQL et affichage sur une page web locale.",
@@ -363,6 +362,62 @@ export const projets = [
     demo: "",
 
     image: StugoImage,
+  },
+  {
+    id: 3,
+    name: "Data Science Cardiaque",
+    subtitle: "Machine Learning & Analyse de Données",
+
+    status: "Terminé",
+    year: "2025 - 2026",
+    role: "Développeur Data Science (Projet Académique - L3 SDN)",
+
+    desc: "Application desktop PyQt5 d'exploration, de visualisation et de simulation par Machine Learning sur un dataset de 180 000 cas cardiaques collectés en Chine.",
+
+    description:
+      "Projet académique consistant à développer une application de bureau en Python/PyQt5 permettant d'explorer, nettoyer, visualiser et modéliser un dataset médical volumineux (heart_attack_china.csv, 180 000 lignes). L'application propose un tableau de données paginé et filtrable, onze types de graphiques interactifs, un module complet de nettoyage de données (suppression, imputation, édition), ainsi qu'un module de simulation par Machine Learning permettant de prédire le risque cardiaque d'un patient à partir de 25 paramètres, via deux modèles entraînés en parallèle (Random Forest et Régression Logistique).",
+
+    objective:
+      "Développer une application data science complète, de l'import et du nettoyage de données brutes jusqu'à la prédiction de risque via des modèles de Machine Learning, avec une interface graphique permettant une exploration visuelle riche du dataset.",
+
+    progress: 100,
+
+    stack: ["Python", "PyQt5", "Scikit-learn", "Pandas"],
+
+    languages: ["Python"],
+    libraries: ["PyQt5", "pandas", "numpy", "matplotlib", "seaborn", "scipy", "scikit-learn"],
+    tools: ["Git"],
+
+    features: [
+      "Import de dataset par drag & drop avec chargement en arrière-plan",
+      "Tableau de données paginé, triable et filtrable en temps réel",
+      "Onze visualisations interactives (histogrammes, heatmap, violin plot, hexbin...)",
+      "Filtres dynamiques appliqués avec debounce sur les graphiques",
+      "Module de nettoyage de données (suppression, imputation, édition de cellules)",
+      "Historique d'actions annulable (jusqu'à 10 étapes)",
+      "Formulaire de simulation à 25 paramètres patient",
+      "Entraînement parallèle de deux modèles ML (Random Forest et Régression Logistique)",
+      "Jauge de risque cardiaque et importance des variables",
+      "Matrice de confusion et métriques comparatives (accuracy, F1, AUC)",
+      "Export du dataset brut ou nettoyé"
+    ],
+
+    challenges: [
+      "Traiter et nettoyer un dataset volumineux (180 000 lignes) sans bloquer l'interface",
+      "Entraîner deux modèles de Machine Learning en parallèle sur un thread séparé",
+      "Concevoir onze visualisations différentes avec filtres dynamiques réactifs",
+      "Interpréter et restituer les résultats d'un modèle ML de façon lisible (importance des variables, contribution patient)",
+      "Gérer un historique de modifications annulables sur les opérations de nettoyage",
+      "Assurer la fluidité de l'interface pendant les traitements longs (chargement, entraînement)"
+    ],
+
+    feeling:
+      "Un projet où je me suis beaucoup investi sur la partie data science autant que sur l'interface, car il fallait concilier rigueur du traitement des données (nettoyage, imputation) avec la pédagogie de la restitution (visualisations, interprétation des modèles ML). Voir la jauge de risque réagir en fonction du profil patient renseigné, après tout le travail de nettoyage et d'entraînement en amont, a été la partie la plus gratifiante du projet.",
+
+    github: "https://github.com/MyRemKi/Projet_IA",
+    demo: "",
+
+    image: CardiaqueImage,
   },
 ]
 
