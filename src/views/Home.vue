@@ -14,7 +14,7 @@
         </h1>
 
         <p class="subtitle">
-          Recherche alternance dès septembre 2026 — 1 à 2 ans — France
+          Recherche alternance, disponible dès maintenant — 1 à 2 ans — mobile en France
         </p>
 
         <div class="roles">
