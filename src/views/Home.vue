@@ -18,10 +18,10 @@
         </p>
 
         <div class="roles">
-          <span>Data Engineer</span>
+          <span>AI Engineer</span>
+          <span>Data Engineer </span>
           <span>Data Scientist</span>
           <span>Développeur IA</span>
-          <span>Prompt Engineer</span>
           <span>Data Architect</span>
         </div>
 
@@ -51,7 +51,7 @@
     <section class="stats-band">
       <div class="stats-inner">
         <div class="stat">
-          <h3>10+</h3>
+          <h3>6+</h3>
           <p>Projets</p>
         </div>
         <div class="stat-sep"></div>
@@ -76,12 +76,12 @@
         <h2>À propos</h2>
 
         <p>
-          Étudiant en L3 Informatique (Sciences du Numérique) à l'Institut Catholique de Lille,
-          spécialisé en Data.
+          Étudiant en Master Informatique à l'Institut Catholique de Lille,
+          spécialisé en Data et Intelligence Artificielle.
         </p>
 
         <p>
-          Je recherche une alternance dans la data et l'intelligence artificielle.
+          Je recherche un poste Ingénieur Intelligence Artificielle  ou un poste dans le domaine IA / Data.
         </p>
       </div>
 
