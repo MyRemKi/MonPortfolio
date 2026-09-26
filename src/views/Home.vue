@@ -61,8 +61,8 @@
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
-          <h3>100%</h3>
-          <p>Motivation</p>
+          <h3>+6</h3>
+          <p>technologies maîtrisées</p>
         </div>
       </div>
     </section>
@@ -81,7 +81,7 @@
         </p>
 
         <p>
-          Je recherche un poste Ingénieur Intelligence Artificielle  ou un poste dans le domaine IA / Data.
+          Je recherche de préférence un poste Ingénieur Intelligence Artificielle ou un poste dans le domaine IA / Data.
         </p>
       </div>
 
@@ -93,22 +93,22 @@
         <div class="search-grid">
           <div class="search-item">
             <h4>Contrat</h4>
-            <p>Alternance (1 à 2 ans)</p>
+            <p> Apprentissage (1 à 2 ans)</p>
           </div>
 
           <div class="search-item">
             <h4>Début</h4>
-            <p>Septembre 2026</p>
+            <p> entre octobre et décembre 2026 </p>
           </div>
 
           <div class="search-item">
             <h4>Mobilité</h4>
-            <p>France entière (préférence Lille / Paris)</p>
+            <p>France entière</p>
           </div>
 
           <div class="search-item">
             <h4>Poursuite d'études</h4>
-            <p>Data Science / IA / Data Engineering</p>
+            <p>Master Data et IA</p>
           </div>
         </div>
       </div>
