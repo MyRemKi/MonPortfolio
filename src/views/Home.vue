@@ -14,15 +14,15 @@
         </h1>
 
         <p class="subtitle">
-          Recherche alternance dès septembre 2026 — 1 à 2 ans — France
+          Recherche alternance, disponible dès maintenant — 1 à 2 ans — mobile en France
         </p>
 
         <div class="roles">
-          <span>Ingénieur IA</span>
-          <span>Ingénieur de données</span>
-          <span>Scientifique des données</span>
+          <span>AI Engineer</span>
+          <span>Data Engineer </span>
+          <span>Data Scientist</span>
           <span>Développeur IA</span>
-          <span>Architete des données</span>
+          <span>Data Architect</span>
         </div>
 
         <div class="hero-cta">
@@ -61,8 +61,8 @@
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
-          <h3>100%</h3>
-          <p>Motivation</p>
+          <h3>+6</h3>
+          <p>technologies maîtrisées</p>
         </div>
       </div>
     </section>
@@ -76,12 +76,12 @@
         <h2>À propos</h2>
 
         <p>
-          Étudiant en L3 Informatique (Sciences du Numérique) à l'Institut Catholique de Lille,
-          spécialisé en Data.
+          Étudiant en Master Informatique à l'Institut Catholique de Lille,
+          spécialisé en Data et Intelligence Artificielle.
         </p>
 
         <p>
-          Je recherche une alternance dans la data et l'intelligence artificielle.
+          Je recherche de préférence un poste Ingénieur Intelligence Artificielle ou un poste dans le domaine IA / Data.
         </p>
       </div>
 
@@ -93,22 +93,22 @@
         <div class="search-grid">
           <div class="search-item">
             <h4>Contrat</h4>
-            <p>Alternance (1 à 2 ans)</p>
+            <p> Apprentissage (1 à 2 ans)</p>
           </div>
 
           <div class="search-item">
             <h4>Début</h4>
-            <p>Septembre 2026</p>
+            <p> entre octobre et décembre 2026 </p>
           </div>
 
           <div class="search-item">
             <h4>Mobilité</h4>
-            <p>France entière (préférence Lille / Paris)</p>
+            <p>France entière</p>
           </div>
 
           <div class="search-item">
             <h4>Poursuite d'études</h4>
-            <p>Data Science / IA / Data Engineering</p>
+            <p>Master Data et IA</p>
           </div>
         </div>
       </div>

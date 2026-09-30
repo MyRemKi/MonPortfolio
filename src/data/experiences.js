@@ -63,5 +63,63 @@ export const experiences = [
       "Assurer un service fluide"
     ],
     description: "Job étudiant : participation à l'installation et à l'organisation de la terrasse, du bar et de la cuisine, préparation des plateaux pour le service, soutien aux serveurs et accueil des clients afin d'assurer un service fluide."
-  }
+  },
+{
+  id: 4,
+  job: "Stagiaire Administrateur Système",
+  company: "Caisse d'Assurance Maladie de Lille",
+  location: "Lille",
+  contract: "Stage",
+  start: "Mai 2022",
+  end: "Juin 2022",
+  short: "Stage d'un mois en administration système : câblage réseau, préparation et configuration de postes.",
+  outils: [
+    "Câblage réseau (brassage / débrassage)",
+    "Installation et configuration de postes informatiques",
+    "Gestion du matériel informatique des employés"
+  ],
+  tasks: [
+    "Brassage et débrassage des câbles filaires",
+    "Vérification du matériel rendu et donné aux employés de la CPAM",
+    "Réinstallation et configuration des ordinateurs rendus",
+    "Découverte du métier d'administrateur système"
+  ],
+  description: "Immersion d'un mois au sein de l'équipe informatique de la CPAM de Lille, avec participation à la gestion du parc matériel et à l'infrastructure réseau."
+},
+{
+  id: 5,
+  job: "Stagiaire d'immersion (Seconde Générale)",
+  company: "IBM Client Innovation Center",
+  location: "Bois-Blancs",
+  contract: "Stage d'observation",
+  start: "Juin 2018",
+  end: "Juin 2018",
+  short: "Stage d'une semaine de découverte du milieu professionnel et des domaines de l'informatique.",
+  outils: [
+    "Scratch"
+  ],
+  tasks: [
+    "Découverte du milieu professionnel et d'une partie du secteur informatique",
+    "Petit projet sur Scratch (1h)",
+    "Découverte de différents domaines informatiques (Big Data, IA, Cloud)",
+    "Exploration des langages informatiques et d'autres domaines"
+  ],
+  description: "Première immersion dans le secteur informatique au sein d'IBM, avec une initiation à la programmation et un aperçu des grands domaines du numérique."
+},
+{
+  id: 6,
+  job: "Stagiaire d'immersion (Seconde Générale)",
+  company: "Commissariat de police de Lille-Sud",
+  location: "Lille",
+  contract: "Stage d'observation",
+  start: "Juin 2018",
+  end: "Juin 2018",
+  short: "Stage d'une semaine de découverte de la cybersécurité et de l'administration.",
+  outils: [],
+  tasks: [
+    "Découverte du domaine de la cybersécurité et de l'administration",
+    "Sensibilisation à la sécurité des informations au sein du commissariat"
+  ],
+  description: "Immersion d'une semaine pour découvrir les enjeux de la sécurité de l'information dans un commissariat."
+}
 ]
