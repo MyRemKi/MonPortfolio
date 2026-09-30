@@ -10,7 +10,7 @@
         <img src="/images/logo.jpg" class="logo" />
 
         <h1>
-          Étudiant <span>Data & IA</span>
+          Étudiant en <span>Data & IA</span>
         </h1>
 
         <p class="subtitle">
@@ -18,11 +18,11 @@
         </p>
 
         <div class="roles">
-          <span>Data Engineer</span>
-          <span>Data Scientist</span>
+          <span>Ingénieur IA</span>
+          <span>Ingénieur de données</span>
+          <span>Scientifique des données</span>
           <span>Développeur IA</span>
-          <span>Prompt Engineer</span>
-          <span>Data Architect</span>
+          <span>Architete des données</span>
         </div>
 
         <div class="hero-cta">
@@ -51,7 +51,7 @@
     <section class="stats-band">
       <div class="stats-inner">
         <div class="stat">
-          <h3>10+</h3>
+          <h3>6+</h3>
           <p>Projets</p>
         </div>
         <div class="stat-sep"></div>
